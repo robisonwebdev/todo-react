@@ -1,8 +1,11 @@
 import React from 'react';
+import Projects from './Projects';
 
 const Main = () => {
     return (
-        <div id='Main'>Main</div>
+        <div id='Main'>
+            <Projects />
+        </div>
     );
 }
 
