@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/Footer.css';
 
-const Footer = () => {
+const Footer = ({ address, name, text }) => {
     return (
-        <div id='Footer'>Footer</div>
+        <div id='Footer'>
+            <p>{text} <a href={address} target='_blank' rel='noreferrer'>{name}</a></p>
+        </div>
     );
 }
 
