@@ -2,7 +2,10 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>Header</div>
+        <div id='Header'>
+            <i class="las la-check-circle"></i>
+            <h1>Todo List</h1>
+        </div>
     );
 }
 
