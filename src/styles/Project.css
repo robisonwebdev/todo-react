@@ -1,7 +1,14 @@
 .Project {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projectItem {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
