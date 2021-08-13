@@ -5,10 +5,10 @@ const Project = ({ text }) => {
     return (
         <div className='Project'>
             <div className='projectItem'>
-                <i class="las la-tasks"></i>
+                <i className="las la-tasks"></i>
                 <p>{text}</p>
             </div>            
-            <i class="las la-trash"></i>
+            <i className="las la-trash"></i>
         </div>
     );
 }
