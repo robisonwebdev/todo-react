@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Projects.css';
 
-const Projects = () => {
+const ProjectsContainer = () => {
     return (
-        <div id='Projects'>Projects</div>
+        <div id='ProjectsContainer'>Projects</div>
     );
 }
 
-export default Projects;
+export default ProjectsContainer;
