@@ -3,7 +3,9 @@ import '../styles/ProjectsContainer.css';
 
 const ProjectsContainer = () => {
     return (
-        <div id='ProjectsContainer'>Projects</div>
+        <div id='ProjectsContainer'>
+            <i class="las la-inbox">All Projects</i>
+        </div>
     );
 }
 
