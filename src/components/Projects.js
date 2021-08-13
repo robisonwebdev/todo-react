@@ -1,14 +1,16 @@
 import React from 'react';
 import '../styles/Projects.css';
 
-const Projects = ({ text }) => {
+const Project = ({ text }) => {
     return (
-        <div className='Projects'>
-            <i class="las la-tasks"></i>
-            <p>{text}</p>
+        <div className='Project'>
+            <div className='projectItem'>
+                <i class="las la-tasks"></i>
+                <p>{text}</p>
+            </div>            
             <i class="las la-trash"></i>
         </div>
     );
 }
 
-export default Projects;
+export default Project;
