@@ -1,12 +1,12 @@
 import React from 'react';
-import Projects from './Projects';
+import ProjectsContainer from './ProjectsContainer';
 import Lists from './Lists';
 import '../styles/Main.css';
 
 const Main = () => {
     return (
         <div id='Main'>
-            <Projects />
+            <ProjectsContainer />
             <Lists />
         </div>
     );
