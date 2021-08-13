@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Projects = () => {
+const Projects = ({ text }) => {
     return (
-        <div>proejcts</div>
+        <div className='Projects'>
+            <i class="las la-tasks"></i>
+            <p>{text}</p>
+            <i class="las la-trash"></i>
+        </div>
     );
 }
 
