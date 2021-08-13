@@ -5,7 +5,7 @@ import '../styles/ProjectsContainer.css';
 const ProjectsContainer = () => {
     return (
         <div id='ProjectsContainer'>
-            <i class="las la-inbox">All Projects</i>
+            <i className="las la-inbox">All Projects</i>
             <h2>Projects</h2>
             <Project text='Shopping' />
         </div>
