@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Projects.css';
+import '../styles/Project.css';
 
 const Project = ({ text }) => {
     return (
