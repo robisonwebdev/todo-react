@@ -20,6 +20,10 @@ const ProjectsContainer = ({ projects, addProject }) => {
         setShowForm(false);
     }
 
+    const handleCancel = () => {
+        setShowForm(false);
+    }
+
     const handleAddProjectBtn = () => {
         setShowForm(true);
     }
@@ -31,7 +35,7 @@ const ProjectsContainer = ({ projects, addProject }) => {
             {projectsMap}
             <AddProjectBtn onClick={handleAddProjectBtn} />
             
-            {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} value={inputValue} /> : null }
+            {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} onCancel={handleCancel} value={inputValue} /> : null }
         </div>
     );
 }
