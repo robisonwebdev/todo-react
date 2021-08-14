@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div id='App'>
       <Header />
-      <Main />
+      <Main projects={projects} setProjects={setProjects} />
       <Footer address='https://github.com/robisonwebdev' name='David Robison' text='Developed by ' />
     </div>
   );
