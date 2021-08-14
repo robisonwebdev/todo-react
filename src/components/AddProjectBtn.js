@@ -1,5 +1,9 @@
 import React from 'react';
 
-const AddProjectBtn = () => <i class="las la-plus">Add Project</i>
+const AddProjectBtn = ({ onClick }) => {
+    return (
+        <i class="las la-plus" onClick={onClick}>Add Project</i>
+    );
+}
 
 export default AddProjectBtn;
