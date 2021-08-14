@@ -6,6 +6,7 @@ import '../styles/ProjectsContainer.css';
 
 const ProjectsContainer = ({ projects, addProject }) => {
     const [inputValue, setInputValue] = useState('');
+    const [addProjectBtn, setAddProjectBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
     const projectsMap = projects.map(project => <Project text={project.title} />)
 
@@ -18,14 +19,17 @@ const ProjectsContainer = ({ projects, addProject }) => {
         addProject(inputValue);
         setInputValue('');
         setShowForm(false);
+        setAddProjectBtn(true);
     }
 
     const handleCancel = () => {
         setInputValue('');
         setShowForm(false);
+        setAddProjectBtn(true);
     }
 
     const handleAddProjectBtn = () => {
+        setAddProjectBtn(false);
         setShowForm(true);
     }
 
@@ -33,9 +37,8 @@ const ProjectsContainer = ({ projects, addProject }) => {
         <div id='ProjectsContainer'>
             <i className="las la-inbox">All Projects</i>
             <h2>Projects</h2>
-            {projectsMap}
-            <AddProjectBtn onClick={handleAddProjectBtn} />
-            
+            {projectsMap}            
+            {addProjectBtn ? <AddProjectBtn onClick={handleAddProjectBtn} /> : null}
             {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} onCancel={handleCancel} value={inputValue} /> : null }
         </div>
     );
