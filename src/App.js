@@ -14,10 +14,17 @@ const App = () => {
     }
   ]);
 
+  const addProject = (value) => {
+    let newObject = {
+      title: value,
+    }
+    setProjects(prevState => [...prevState, newObject])
+  }
+
   return (
     <div id='App'>
       <Header />
-      <Main projects={projects} setProjects={setProjects} />
+      <Main projects={projects} addProject={addProject} />
       <Footer address='https://github.com/robisonwebdev' name='David Robison' text='Developed by ' />
     </div>
   );
