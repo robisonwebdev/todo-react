@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Project from './Project';
 import AddProjectBtn from './AddProjectBtn';
+import AddProjectForm from './AddProjectForm';
 import '../styles/ProjectsContainer.css';
 
 const ProjectsContainer = ({ projects, addProject }) => {
@@ -17,17 +18,17 @@ const ProjectsContainer = ({ projects, addProject }) => {
         setInputValue('');
     }
 
+    const handleAddProjectBtn = () => {
+        console.log("CLICK CLICK");
+    }
+
     return (
         <div id='ProjectsContainer'>
             <i className="las la-inbox">All Projects</i>
             <h2>Projects</h2>
             {projectsMap}
-            <AddProjectBtn />
-            <form onSubmit={handleSubmit}>
-                <input type='text' value={inputValue} onChange={handleChange} />
-                <button type='submit'>Add Item</button>
-                <button type='reset'>Cancel</button>
-            </form>
+            <AddProjectBtn onClick={handleAddProjectBtn} />
+            <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} value={inputValue} />
         </div>
     );
 }
