@@ -13,6 +13,7 @@ const ProjectsContainer = ({ projects, addProject }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addProject(inputValue);
+        setInputValue('');
     }
 
     return (
