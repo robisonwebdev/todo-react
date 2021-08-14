@@ -21,6 +21,7 @@ const ProjectsContainer = ({ projects, addProject }) => {
     }
 
     const handleCancel = () => {
+        setInputValue('');
         setShowForm(false);
     }
 
