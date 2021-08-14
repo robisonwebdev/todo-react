@@ -6,6 +6,7 @@ import '../styles/ProjectsContainer.css';
 
 const ProjectsContainer = ({ projects, addProject }) => {
     const [inputValue, setInputValue] = useState('');
+    const [showForm, setShowForm] = useState(false);
     const projectsMap = projects.map(project => <Project text={project.title} />)
 
     const handleChange = (event) => {
@@ -16,10 +17,11 @@ const ProjectsContainer = ({ projects, addProject }) => {
         event.preventDefault();
         addProject(inputValue);
         setInputValue('');
+        setShowForm(false);
     }
 
     const handleAddProjectBtn = () => {
-        console.log("CLICK CLICK");
+        setShowForm(true);
     }
 
     return (
@@ -28,7 +30,8 @@ const ProjectsContainer = ({ projects, addProject }) => {
             <h2>Projects</h2>
             {projectsMap}
             <AddProjectBtn onClick={handleAddProjectBtn} />
-            <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} value={inputValue} />
+            
+            {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} value={inputValue} /> : null }
         </div>
     );
 }
