@@ -2,8 +2,8 @@ import React from 'react';
 
 const AddProjectForm = ({ onSubmit, onChange, value}) => {
     return (
-        <form onSubmit={handleSubmit}>
-                <input type='text' value={inputValue} onChange={handleChange} />
+        <form onSubmit={onSubmit}>
+                <input type='text' value={value} onChange={onChange} />
                 <button type='submit'>Add Item</button>
                 <button type='reset'>Cancel</button>
         </form>
