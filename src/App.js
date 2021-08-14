@@ -5,7 +5,14 @@ import Footer from './components/Footer';
 import './styles/App.css';
 
 const App = () => {
-  const [projects, setProjects] = useState({});
+  const [projects, setProjects] = useState([
+    {
+      title: 'Fishing',
+    },
+    {
+      title: 'Job',
+    }
+  ]);
 
   return (
     <div id='App'>
