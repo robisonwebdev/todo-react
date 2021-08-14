@@ -1,9 +1,5 @@
 import React from 'react';
 
-const AddProjectBtn = () => {
-    return (
-        <div>AddProjectBtn</div>
-    );
-}
+const AddProjectBtn = () => <i class="las la-plus">Add Project</i>
 
 export default AddProjectBtn;
