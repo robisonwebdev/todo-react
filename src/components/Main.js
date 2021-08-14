@@ -3,10 +3,10 @@ import ProjectsContainer from './ProjectsContainer';
 import Lists from './Lists';
 import '../styles/Main.css';
 
-const Main = ({ projects, setProjects}) => {
+const Main = ({ projects, addProject}) => {
     return (
         <div id='Main'>
-            <ProjectsContainer projects={projects} setProjects={setProjects} />
+            <ProjectsContainer projects={projects} addProject={addProject} />
             <Lists />
         </div>
     );
