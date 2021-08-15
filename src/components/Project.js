@@ -4,7 +4,7 @@ import '../styles/Project.css';
 const Project = ({ text, onClick }) => {
     return (
         <div className='Project'>
-            <div className='projectItem' onClick={onClick}>
+            <div className='projectItem' onClick={() => onClick(text)}>
                 <i className="las la-tasks"></i>
                 <p>{text}</p>
             </div>            
