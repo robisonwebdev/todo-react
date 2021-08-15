@@ -14,6 +14,8 @@ const Main = () => {
           items: ['Hours', 'Pay', 'Years']
         }
     ]);
+
+    const [list, setList] = useState([]);
     
     const addProject = (value) => {
         let newObject = {
@@ -25,13 +27,15 @@ const Main = () => {
     }
 
     const viewProject = (text) => {
-        console.log(`Project ${text} Clicked`);
+        let findProject = projects.filter(project => project.title === text);
+
+        setList(findProject);
     }
 
     return (
         <div id='Main'>
             <ProjectsContainer projects={projects} addProject={addProject} viewProject={viewProject} />
-            <Lists />
+            <Lists projectList={list} />
         </div>
     );
 }
