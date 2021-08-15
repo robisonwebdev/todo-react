@@ -7,11 +7,11 @@ const Main = () => {
     const [projects, setProjects] = useState([
         {
           title: 'Fishing',
-          items: []
+          items: ['Bait', 'Line']
         },
         {
           title: 'Job',
-          items: []
+          items: ['Hours', 'Pay', 'Years']
         }
     ]);
     
@@ -24,8 +24,8 @@ const Main = () => {
         setProjects(prevState => [...prevState, newObject])
     }
 
-    const viewProject = () => {
-        console.log('Project Clicked');
+    const viewProject = (text) => {
+        console.log(`Project ${text} Clicked`);
     }
 
     return (
