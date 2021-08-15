@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Project.css';
 
-const Project = ({ text }) => {
+const Project = ({ text, onClick }) => {
     return (
         <div className='Project'>
-            <div className='projectItem'>
+            <div className='projectItem' onClick={onClick}>
                 <i className="las la-tasks"></i>
                 <p>{text}</p>
             </div>            
