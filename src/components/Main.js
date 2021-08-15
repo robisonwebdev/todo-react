@@ -30,7 +30,7 @@ const Main = () => {
 
     return (
         <div id='Main'>
-            <ProjectsContainer projects={projects} addProject={addProject} />
+            <ProjectsContainer projects={projects} addProject={addProject} viewProject={viewProject} />
             <Lists />
         </div>
     );
