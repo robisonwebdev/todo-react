@@ -18,6 +18,7 @@ const Main = () => {
     const addProject = (value) => {
         let newObject = {
             title: value,
+            items: []
         }
 
         setProjects(prevState => [...prevState, newObject])
