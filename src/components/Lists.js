@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Lists.css';
 
-const Lists = ({ title }) => {
+const Lists = ({ projectList }) => {
     return (
         <div id='Lists'>
-            <h1>{title}</h1>
+            <h1>{projectList[0].title}</h1>
         </div>
     );
 }
