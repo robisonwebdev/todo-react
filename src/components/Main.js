@@ -24,6 +24,10 @@ const Main = () => {
         setProjects(prevState => [...prevState, newObject])
     }
 
+    const viewProject = () => {
+        console.log('Project Clicked');
+    }
+
     return (
         <div id='Main'>
             <ProjectsContainer projects={projects} addProject={addProject} />
