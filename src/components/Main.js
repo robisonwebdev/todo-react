@@ -7,9 +7,11 @@ const Main = () => {
     const [projects, setProjects] = useState([
         {
           title: 'Fishing',
+          items: []
         },
         {
           title: 'Job',
+          items: []
         }
     ]);
     
