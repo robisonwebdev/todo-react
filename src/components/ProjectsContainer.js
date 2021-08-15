@@ -4,11 +4,12 @@ import AddProjectBtn from './AddProjectBtn';
 import AddProjectForm from './AddProjectForm';
 import '../styles/ProjectsContainer.css';
 
-const ProjectsContainer = ({ projects, addProject }) => {
+const ProjectsContainer = ({ projects, addProject, viewProject }) => {
     const [inputValue, setInputValue] = useState('');
     const [addProjectBtn, setAddProjectBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
-    const projectsMap = projects.map(project => <Project text={project.title} />)
+
+    const projectsMap = projects.map(project => <Project text={project.title} onClick={viewProject} />)
 
     const handleChange = (event) => {
         setInputValue(event.target.value);
