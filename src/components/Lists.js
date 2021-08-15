@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/Lists.css';
 
-const Lists = () => {
+const Lists = ({ title }) => {
     return (
-        <div id='Lists'>Lists</div>
+        <div id='Lists'>
+            <h1>{title}</h1>
+        </div>
     );
 }
 
