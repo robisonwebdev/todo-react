@@ -20,6 +20,7 @@ const Lists = ({ projectList }) => {
     const handleCancel = () => {
         setShowBtn(true);
         setShowForm(false);
+        setInputVale('');
     }
 
     const handleChange = (event) => {
