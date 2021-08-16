@@ -19,7 +19,8 @@ const Lists = ({ projectList }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(inputValue);
+        
+        handleCancel();
     }
 
     const handleCancel = () => {
