@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AddItemForm = () => {
+const AddItemForm = ({ cancel }) => {
     return (
         <form>
             <input />
             <button>Add</button>
-            <button>Cancel</button>
+            <button onClick={cancel}>Cancel</button>
         </form>
     );
 }
