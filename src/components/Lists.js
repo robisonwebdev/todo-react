@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AddItemBtn from './AddItemBtn';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
 const Lists = ({ projectList }) => {
+    const [showBtn, setShowBtn] = useState(true);
+    const [showForm, setShowForm] = useState(false);
+
     const projectItems = projectList[0].items.map(item => {
         return <li>{item}</li>
     })
