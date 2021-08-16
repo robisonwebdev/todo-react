@@ -4,6 +4,7 @@ import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
 const Lists = ({ projectList }) => {
+    const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
 
@@ -19,6 +20,10 @@ const Lists = ({ projectList }) => {
     const handleCancel = () => {
         setShowBtn(true);
         setShowForm(false);
+    }
+
+    const handleChange = (event) => {
+        setInputVale(event.target.value);
     }
     
     return (
