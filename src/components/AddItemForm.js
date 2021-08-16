@@ -2,7 +2,11 @@ import React from 'react';
 
 const AddItemForm = () => {
     return (
-        <form></form>
+        <form>
+            <input />
+            <button>Add</button>
+            <button>Cancel</button>
+        </form>
     );
 }
 
