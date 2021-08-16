@@ -5,7 +5,7 @@ import '../styles/Lists.css';
 
 const Lists = ({ projectList }) => {
     const [showBtn, setShowBtn] = useState(true);
-    const [showForm, setShowForm] = useState(true);
+    const [showForm, setShowForm] = useState(false);
 
     const projectItems = projectList[0].items.map(item => {
         return <li>{item}</li>
@@ -14,6 +14,11 @@ const Lists = ({ projectList }) => {
     const handleAddItemBtn = () => {
         setShowBtn(false);
         setShowForm(true);
+    }
+
+    const handleCancel = () => {
+        setShowBtn(true);
+        setShowForm(false);
     }
     
     return (
@@ -24,7 +29,7 @@ const Lists = ({ projectList }) => {
             </ul>
             
             {showBtn ? <AddItemBtn onClick={handleAddItemBtn} /> : null}
-            {showForm ? <AddItemForm /> : null}
+            {showForm ? <AddItemForm cancel={handleCancel} /> : null}
         </div>
     );
 }
