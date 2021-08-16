@@ -19,7 +19,7 @@ const Lists = ({ projectList }) => {
             </ul>
             
             {showBtn ? <AddItemBtn /> : null}
-            <AddItemForm />
+            {showForm ? <AddItemForm /> : null}
         </div>
     );
 }
