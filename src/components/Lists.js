@@ -1,4 +1,6 @@
 import React from 'react';
+import AddItemBtn from './AddItemBtn';
+import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
 const Lists = ({ projectList }) => {
@@ -12,6 +14,8 @@ const Lists = ({ projectList }) => {
             <ul>
                 {projectItems}
             </ul>
+            <AddItemBtn />
+            <AddItemForm />
         </div>
     );
 }
