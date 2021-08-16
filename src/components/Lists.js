@@ -9,7 +9,7 @@ const Lists = ({ projectList }) => {
 
     const projectItems = projectList[0].items.map(item => {
         return <li>{item}</li>
-    })
+    });
     
     return (
         <div id='Lists'>
@@ -17,7 +17,8 @@ const Lists = ({ projectList }) => {
             <ul>
                 {projectItems}
             </ul>
-            <AddItemBtn />
+            
+            {showBtn ? <AddItemBtn /> : null}
             <AddItemForm />
         </div>
     );
