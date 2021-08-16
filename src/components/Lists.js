@@ -5,11 +5,16 @@ import '../styles/Lists.css';
 
 const Lists = ({ projectList }) => {
     const [showBtn, setShowBtn] = useState(true);
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(true);
 
     const projectItems = projectList[0].items.map(item => {
         return <li>{item}</li>
     });
+
+    const handleAddItemBtn = () => {
+        setShowBtn(false);
+        setShowForm(true);
+    }
     
     return (
         <div id='Lists'>
@@ -18,7 +23,7 @@ const Lists = ({ projectList }) => {
                 {projectItems}
             </ul>
             
-            {showBtn ? <AddItemBtn /> : null}
+            {showBtn ? <AddItemBtn onClick={handleAddItemBtn} /> : null}
             {showForm ? <AddItemForm /> : null}
         </div>
     );
