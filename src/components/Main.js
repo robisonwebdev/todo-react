@@ -15,7 +15,7 @@ const Main = () => {
         }
     ]);
 
-    const [list, setList] = useState([]);
+    const [list, setList] = useState(projects);
     
     const addProject = (value) => {
         let newObject = {
