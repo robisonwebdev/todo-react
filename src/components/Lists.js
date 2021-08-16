@@ -34,7 +34,7 @@ const Lists = ({ projectList }) => {
             </ul>
             
             {showBtn ? <AddItemBtn onClick={handleAddItemBtn} /> : null}
-            {showForm ? <AddItemForm cancel={handleCancel} handleChange={handleChange} /> : null}
+            {showForm ? <AddItemForm cancel={handleCancel} handleChange={handleChange} value={inputValue} /> : null}
         </div>
     );
 }
