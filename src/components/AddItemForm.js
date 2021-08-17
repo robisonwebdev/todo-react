@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/AddItemForm.css';
 
 const AddItemForm = ({ cancel, handleChange, submit, value }) => {
     return (
