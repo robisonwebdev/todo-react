@@ -27,12 +27,6 @@ const Lists = ({ projectList }) => {
         handleReset();
     }
 
-    const handleCancel = () => {
-        setShowBtn(true);
-        setShowForm(false);
-        setInputVale('');
-    }
-
     const handleChange = (event) => {
         setInputVale(event.target.value);
     }
@@ -50,7 +44,7 @@ const Lists = ({ projectList }) => {
                 {projectItems}
             </ul>            
             {showBtn ? <AddItemBtn onClick={handleAddItemBtn} /> : null}
-            {showForm ? <AddItemForm submit={handleSubmit} cancel={handleCancel} handleChange={handleChange} value={inputValue} /> : null}
+            {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
         </div>
     );
 }
