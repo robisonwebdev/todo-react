@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AddItemBtn from './AddItemBtn';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
@@ -7,6 +7,11 @@ const Lists = ({ projectList }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
+
+    useEffect(() => {
+        setShowBtn(true);
+        setShowForm(false);
+    }, [projectList])
 
     const projectItems = projectList[0].items.map(item => {
         return <li key={item}>{item}</li>
