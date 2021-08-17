@@ -11,6 +11,7 @@ const Lists = ({ projectList }) => {
     useEffect(() => {
         setShowBtn(true);
         setShowForm(false);
+        setInputVale('');
     }, [projectList])
 
     const projectItems = projectList[0].items.map(item => {
@@ -43,8 +44,7 @@ const Lists = ({ projectList }) => {
             <h1>{projectList[0].title}</h1>
             <ul>
                 {projectItems}
-            </ul>
-            
+            </ul>            
             {showBtn ? <AddItemBtn onClick={handleAddItemBtn} /> : null}
             {showForm ? <AddItemForm submit={handleSubmit} cancel={handleCancel} handleChange={handleChange} value={inputValue} /> : null}
         </div>
