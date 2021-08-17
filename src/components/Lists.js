@@ -16,15 +16,11 @@ const Lists = ({ projectList }) => {
         return <li key={item}>{item}</li>
     });
 
+    const projectTitle = projectList[0].title;
+
     const handleAddItemBtn = () => {
         setShowBtn(false);
         setShowForm(true);
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        //Submit data here
-        handleReset();
     }
 
     const handleChange = (event) => {
@@ -36,10 +32,16 @@ const Lists = ({ projectList }) => {
         setShowForm(false);
         setInputVale('');
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        //Submit data here
+        handleReset();
+    }
     
     return (
         <div id='Lists'>
-            <h1>{projectList[0].title}</h1>
+            <h1>{projectTitle}</h1>
             <ul>
                 {projectItems}
             </ul>            
