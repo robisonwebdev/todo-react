@@ -9,9 +9,7 @@ const Lists = ({ projectList }) => {
     const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
-        setShowBtn(true);
-        setShowForm(false);
-        setInputVale('');
+        handleReset();
     }, [projectList])
 
     const projectItems = projectList[0].items.map(item => {
@@ -25,8 +23,8 @@ const Lists = ({ projectList }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        
-        handleCancel();
+        //Submit data here
+        handleReset();
     }
 
     const handleCancel = () => {
@@ -37,6 +35,12 @@ const Lists = ({ projectList }) => {
 
     const handleChange = (event) => {
         setInputVale(event.target.value);
+    }
+
+    const handleReset = () => {
+        setShowBtn(true);
+        setShowForm(false);
+        setInputVale('');
     }
     
     return (
