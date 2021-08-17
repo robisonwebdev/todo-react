@@ -9,7 +9,7 @@ const Lists = ({ projectList }) => {
     const [showForm, setShowForm] = useState(false);
 
     const projectItems = projectList[0].items.map(item => {
-        return <li>{item}</li>
+        return <li key={item}>{item}</li>
     });
 
     const handleAddItemBtn = () => {
