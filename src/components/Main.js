@@ -7,11 +7,13 @@ const Main = () => {
     const [projects, setProjects] = useState([
         {
           title: 'Fishing',
-          items: ['Bait', 'Line']
+          items: ['Bait', 'Line'],
+          id: 147
         },
         {
           title: 'Job',
-          items: ['Hours', 'Pay', 'Years']
+          items: ['Hours', 'Pay', 'Years'],
+          id: 159
         }
     ]);
 
@@ -20,7 +22,8 @@ const Main = () => {
     const addProject = (value) => {
         let newObject = {
             title: value,
-            items: []
+            items: [],
+            id: Math.floor(Math.random() * 10000)
         }
 
         setProjects(prevState => [...prevState, newObject])
@@ -34,6 +37,7 @@ const Main = () => {
 
     return (
         <div id='Main'>
+            {console.log(projects)}
             <ProjectsContainer projects={projects} addProject={addProject} viewProject={viewProject} />
             <Lists projectList={list} />
         </div>
