@@ -29,6 +29,12 @@ const Main = () => {
         setProjects(prevState => [...prevState, newObject])
     }
 
+    const deleteProject = (id) => {
+        const newArray = projects.filter(project => project.id !== id);
+
+        setProjects(newArray);
+    }
+
     const viewProject = (text) => {
         let findProject = projects.filter(project => project.title === text);
 
@@ -38,7 +44,7 @@ const Main = () => {
     return (
         <div id='Main'>
             {console.log(projects)}
-            <ProjectsContainer projects={projects} addProject={addProject} viewProject={viewProject} />
+            <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
             <Lists projectList={list} />
         </div>
     );
