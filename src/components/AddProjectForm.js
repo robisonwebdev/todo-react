@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/AddProjectForm.css';
 
 const AddProjectForm = ({ onSubmit, onChange, onCancel, value}) => {
     return (
