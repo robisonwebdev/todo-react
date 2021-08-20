@@ -29,6 +29,17 @@ const Main = () => {
         setProjects(prevState => [...prevState, newObject])
     }
 
+    const addItem = (id, value) => {
+        let updateItems = projects.map(project => {
+            if (project.id === id) {
+                return {...project, items: [...project.items, value]};
+            }
+            return project;
+        })
+
+        setProjects(updateItems);
+    }
+
     const deleteProject = (id) => {
         const newArray = projects.filter(project => project.id !== id);
 
@@ -45,7 +56,7 @@ const Main = () => {
         <div id='Main'>
             {console.log(projects)}
             <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
-            <Lists projectList={list} />
+            <Lists projectList={list} addItem={addItem} />
         </div>
     );
 }
