@@ -3,7 +3,7 @@ import AddItemBtn from './AddItemBtn';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
-const Lists = ({ projectList }) => {
+const Lists = ({ projectList, addItem }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
@@ -35,7 +35,7 @@ const Lists = ({ projectList }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //Submit data here
+        addItem(projectList[0].id, inputValue);
         handleReset();
     }
     
