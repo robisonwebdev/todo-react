@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectsContainer from './ProjectsContainer';
 import Lists from './Lists';
 import '../styles/Main.css';
@@ -17,7 +17,7 @@ const Main = () => {
         }
     ]);
 
-    const [list, setList] = useState(projects);
+    const [currentProject, setCurrentProject] = useState(projects[0])
     
     const addProject = (value) => {
         let newObject = {
@@ -46,17 +46,19 @@ const Main = () => {
         setProjects(newArray);
     }
 
-    const viewProject = (text) => {
-        let findProject = projects.filter(project => project.title === text);
 
-        setList(findProject);
+    const viewProject = (id) => {
+        let findProject = projects.filter(project => project.id === id);
+
+        setCurrentProject(findProject[0]);
     }
 
     return (
         <div id='Main'>
             {console.log(projects)}
+            {console.log('Main.js current project:', currentProject)}
             <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
-            <Lists projectList={list} addItem={addItem} />
+            <Lists currentProject={currentProject} addItem={addItem} />
         </div>
     );
 }
