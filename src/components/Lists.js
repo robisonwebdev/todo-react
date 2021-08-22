@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ProjectItem from './ProjectItem';
 import AddItemBtn from './AddItemBtn';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
@@ -40,6 +41,7 @@ const Lists = ({ id, items, title, addItem }) => {
     return (
         <div id='Lists'>
             <h1>{title}</h1>
+            <ProjectItem />
             <ul>
                 {projectItems}
             </ul>            
