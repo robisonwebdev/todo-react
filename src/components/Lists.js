@@ -3,20 +3,18 @@ import AddItemBtn from './AddItemBtn';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
-const Lists = ({ projectList, addItem }) => {
+const Lists = ({ id, items, title, addItem }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
         handleReset();
-    }, [projectList])
+    }, [id])
 
-    const projectItems = projectList[0].items.map(item => {
+    let projectItems = items.map(item => {
         return <li key={item}>{item}</li>
     });
-
-    const projectTitle = projectList[0].title;
 
     const handleAddItemBtn = () => {
         setShowBtn(false);
@@ -35,13 +33,13 @@ const Lists = ({ projectList, addItem }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        addItem(projectList[0].id, inputValue);
+        addItem(id, inputValue);
         handleReset();
     }
     
     return (
         <div id='Lists'>
-            <h1>{projectTitle}</h1>
+            <h1>{title}</h1>
             <ul>
                 {projectItems}
             </ul>            
