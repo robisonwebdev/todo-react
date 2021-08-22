@@ -22,7 +22,7 @@ const Main = () => {
 
     useEffect(() => {
         viewProject(currentID);
-    }, [projects])
+    }, [projects, currentID])
     
     const addProject = (value) => {
         let newObject = {
