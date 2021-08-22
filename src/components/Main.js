@@ -59,7 +59,10 @@ const Main = () => {
     const addItem = (id, value) => {
         let updateItems = projects.map(project => {
             if (project.id === id) {
-                return {...project, items: [...project.items, value]};
+                return {...project, items: [...project.items, {
+                    name: value,
+                    checked: false
+                }]};
             }
             return project;
         })
