@@ -17,7 +17,12 @@ const Main = () => {
         }
     ]);
 
-    const [currentProject, setCurrentProject] = useState(projects[0])
+    const [currentProject, setCurrentProject] = useState(projects[0]);
+    const [currentID, setCurrentID] = useState(projects[0].id)
+
+    useEffect(() => {
+        viewProject(currentID);
+    }, [projects])
     
     const addProject = (value) => {
         let newObject = {
@@ -51,14 +56,13 @@ const Main = () => {
         let findProject = projects.filter(project => project.id === id);
 
         setCurrentProject(findProject[0]);
+        setCurrentID(findProject[0].id);
     }
 
     return (
         <div id='Main'>
-            {console.log(projects)}
-            {console.log('Main.js current project:', currentProject)}
             <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
-            <Lists currentProject={currentProject} addItem={addItem} />
+            <Lists id={currentProject.id} items={currentProject.items} title={currentProject.title} addItem={addItem} />
         </div>
     );
 }
