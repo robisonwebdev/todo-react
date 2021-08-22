@@ -7,12 +7,34 @@ const Main = () => {
     const [projects, setProjects] = useState([
         {
           title: 'Fishing',
-          items: ['Bait', 'Line'],
+          items: [
+              {
+                  name: 'Bait',
+                  checked: false
+              },
+              {
+                  name: 'Line',
+                  checked: false
+              }
+          ],
           id: 147
         },
         {
           title: 'Job',
-          items: ['Hours', 'Pay', 'Years'],
+          items: [
+              {
+                  name: 'Hours',
+                  checked: false
+              },
+              {
+                  name: 'Pay',
+                  checked: false
+              },
+              {
+                  name: 'Years',
+                  checked: false
+              }
+          ],
           id: 159
         }
     ]);
