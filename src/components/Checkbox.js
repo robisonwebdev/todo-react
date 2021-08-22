@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ProjectItem = () => {
+const Checkbox = () => {
     return (
-        <div>Project Item</div>
+        <div>Checkbox</div>
     );
 }
 
-export default ProjectItem;
+export default Checkbox;
