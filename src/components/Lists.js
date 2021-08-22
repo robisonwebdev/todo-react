@@ -14,7 +14,7 @@ const Lists = ({ id, items, title, addItem }) => {
     }, [id])
 
     let projectItems = items.map(item => {
-        return <li key={item}>{item}</li>
+        return <Checkbox name={item.name} checked={item.checked} />
     });
 
     const handleAddItemBtn = () => {
@@ -40,8 +40,8 @@ const Lists = ({ id, items, title, addItem }) => {
     
     return (
         <div id='Lists'>
+            {/* {console.log(items[0])} */}
             <h1>{title}</h1>
-            <Checkbox />
             <ul>
                 {projectItems}
             </ul>            
