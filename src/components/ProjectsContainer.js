@@ -9,7 +9,7 @@ const ProjectsContainer = ({ projects, addProject, deleteProject, viewProject })
     const [addProjectBtn, setAddProjectBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
 
-    const projectsMap = projects.map(project => <Project key={project.title} text={project.title} projectID={project.id} onClick={viewProject} deleteProject={deleteProject} />)
+    const projectsMap = projects.map(project => <Project key={project.title} text={project.title} projectID={project.id} viewProject={viewProject} deleteProject={deleteProject} />)
 
     const handleChange = (event) => {
         setInputValue(event.target.value);
