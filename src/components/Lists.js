@@ -4,7 +4,7 @@ import AddItemBtn from './AddItemBtn';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
-const Lists = ({ id, items, title, addItem }) => {
+const Lists = ({ id, items, title, addItem, updateChecked }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
@@ -14,7 +14,7 @@ const Lists = ({ id, items, title, addItem }) => {
     }, [id])
 
     let projectItems = items.map(item => {
-        return <Checkbox name={item.name} checked={item.checked} />
+        return <Checkbox name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
     });
 
     const handleAddItemBtn = () => {
