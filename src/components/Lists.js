@@ -14,7 +14,7 @@ const Lists = ({ id, items, title, addItem, updateChecked }) => {
     }, [id])
 
     let projectItems = items.map(item => {
-        return <Checkbox name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+        return <Checkbox key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
     });
 
     const handleAddItemBtn = () => {
@@ -40,7 +40,6 @@ const Lists = ({ id, items, title, addItem, updateChecked }) => {
     
     return (
         <div id='Lists'>
-            {/* {console.log(items[0])} */}
             <h1>{title}</h1>
             <ul>
                 {projectItems}
