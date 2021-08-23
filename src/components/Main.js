@@ -44,7 +44,6 @@ const Main = () => {
 
     useEffect(() => {
         viewProject(currentID);
-        console.log(projects)
     }, [projects, currentID])
     
     const addProject = (value) => {
