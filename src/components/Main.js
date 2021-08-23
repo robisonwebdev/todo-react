@@ -44,6 +44,7 @@ const Main = () => {
 
     useEffect(() => {
         viewProject(currentID);
+        console.log(projects)
     }, [projects, currentID])
     
     const addProject = (value) => {
@@ -76,7 +77,6 @@ const Main = () => {
         setProjects(newArray);
     }
 
-
     const viewProject = (id) => {
         let findProject = projects.filter(project => project.id === id);
 
@@ -84,10 +84,28 @@ const Main = () => {
         setCurrentID(findProject[0].id);
     }
 
+    const updateChecked = (id, name) => {
+       let updateItem = currentProject.items.map(item => {
+           if (item.name === name) {
+               return {...item, checked: !item.checked}
+           }
+           return item;
+       })
+
+       let updateProjects = projects.map(project => {
+           if (project.id === id) {
+               return {...project, items: updateItem}
+           }
+           return project;
+       })
+
+       setProjects(updateProjects);
+    }
+
     return (
         <div id='Main'>
             <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
-            <Lists id={currentProject.id} items={currentProject.items} title={currentProject.title} addItem={addItem} />
+            <Lists project={currentProject} id={currentProject.id} items={currentProject.items} title={currentProject.title} addItem={addItem} updateChecked={updateChecked} />
         </div>
     );
 }
