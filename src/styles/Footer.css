@@ -12,3 +12,8 @@
     height: 3%;
     width: 100%;
 }
+
+#Footer a {
+    color: var(--white);
+    text-decoration: underline;
+}
