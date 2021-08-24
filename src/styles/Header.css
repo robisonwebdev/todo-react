@@ -5,6 +5,9 @@
     align-items: center;
     gap: 10px;
 
+    background-color: var(--red);
+    border-bottom: 2px solid var(--black);
+    color: var(--white);
     padding-left: 15px;
 
     height: 7%;
