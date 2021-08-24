@@ -1,5 +1,6 @@
 #ProjectsContainer {
-    background-color: aquamarine;
+    background-color: var(--darkerWhite);
+    border-right: 1px solid var(--black);
 
     height: 100%;
     width: 20%;
