@@ -21,9 +21,15 @@
 }
 
 .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+
     background-color: var(--darkerWhite);
     border-left: 3px solid var(--red);
-    padding: 10px 0;
+    padding: 10px;
 
     height: auto;
     width: 100%;
