@@ -41,9 +41,9 @@ const Lists = ({ id, items, title, addItem, updateChecked }) => {
     return (
         <div id='Lists'>
             <h1>{title}</h1>
-            <ul>
+            <div className='listItems'>
                 {projectItems}
-            </ul>            
+            </div>            
             {showBtn ? <AddItemBtn onClick={handleAddItemBtn} /> : null}
             {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
         </div>
