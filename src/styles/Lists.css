@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
 
-    background-color: cadetblue;
+    background-color: var(--white);
 
     height: 100%;
     width: 80%;
@@ -16,8 +16,15 @@
     justify-content: center;
     gap: 15px;
 
-    background-color: bisque;
-
     height: auto;
     width: 90%;
+}
+
+.item {
+    background-color: var(--darkerWhite);
+    border-left: 3px solid var(--red);
+    padding: 10px 0;
+
+    height: auto;
+    width: 100%;
 }
