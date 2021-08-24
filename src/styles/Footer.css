@@ -4,6 +4,9 @@
     justify-content: center;
     align-items: center;
 
+    background-color: var(--red);
+    border-top: 2px solid var(--black);
+    color: var(--white);
     font-size: 14px;
 
     height: 3%;
