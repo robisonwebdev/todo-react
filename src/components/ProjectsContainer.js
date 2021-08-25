@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Project from './Project';
-import AddProjectBtn from './AddProjectBtn';
+import Button from './Button';
 import AddProjectForm from './AddProjectForm';
 import '../styles/ProjectsContainer.css';
 
@@ -38,8 +38,8 @@ const ProjectsContainer = ({ projects, addProject, deleteProject, viewProject })
         <div id='ProjectsContainer'>
             <i className="las la-inbox">All Projects</i>
             <h2>Projects</h2>
-            {projectsMap}            
-            {addProjectBtn ? <AddProjectBtn onClick={handleAddProjectBtn} /> : null}
+            {projectsMap}
+            {addProjectBtn ? <Button className='addProjectBtn las la-plus' onClick={handleAddProjectBtn} text='Add Project' /> : null}
             {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} onCancel={handleCancel} value={inputValue} /> : null }
         </div>
     );
