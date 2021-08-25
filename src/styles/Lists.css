@@ -37,10 +37,16 @@
 }
 
 .listButton {
+    cursor: pointer;
     background-color: var(--white);
     border: 1px solid var(--darkerWhite);
     border-radius: 5px;
     font-size: 16px;
     padding: 10px;
     width: 90%;
+}
+
+.listButton:hover {
+    background-color: var(--red);
+    color: var(--white);
 }
