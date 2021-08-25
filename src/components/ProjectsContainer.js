@@ -37,10 +37,12 @@ const ProjectsContainer = ({ projects, addProject, deleteProject, viewProject })
     return (
         <div id='ProjectsContainer'>
             <i className="las la-inbox">All Projects</i>
-            <h2>Projects</h2>
-            {projectsMap}
-            {addProjectBtn ? <Button className='addProjectBtn las la-plus' onClick={handleAddProjectBtn} text='Add Project' /> : null}
-            {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} onCancel={handleCancel} value={inputValue} /> : null }
+            <div className='projects'>
+                <h2>Projects</h2>
+                {projectsMap}
+                {addProjectBtn ? <Button className='addProjectBtn las la-plus' onClick={handleAddProjectBtn} text='Add Project' /> : null}
+                {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} onCancel={handleCancel} value={inputValue} /> : null }
+            </div>
         </div>
     );
 }
