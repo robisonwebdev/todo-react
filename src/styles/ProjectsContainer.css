@@ -22,3 +22,10 @@
     height: auto;
     width: 100%;
 }
+
+.addProjectBtn {
+    cursor: pointer;
+    background-color: var(--darkerWhite);
+    border: none;
+    font-size: 18px;
+}
