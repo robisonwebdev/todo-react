@@ -40,7 +40,7 @@ const ProjectsContainer = ({ projects, addProject, deleteProject, viewProject })
             <div className='projects'>
                 <h2>Projects</h2>
                 {projectsMap}
-                {addProjectBtn ? <Button className='addProjectBtn las la-plus' onClick={handleAddProjectBtn} text='Add Project' /> : null}
+                {addProjectBtn ? <Button className='addProjectBtn' onClick={handleAddProjectBtn} text='Add Project' /> : null}
                 {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} onCancel={handleCancel} value={inputValue} /> : null }
             </div>
         </div>
