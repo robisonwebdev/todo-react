@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Checkbox from './Checkbox';
-import AddItemBtn from './AddItemBtn';
+import Button from './Button';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
@@ -44,7 +44,7 @@ const Lists = ({ id, items, title, addItem, updateChecked }) => {
             <div className='listItems'>
                 {projectItems}
             </div>            
-            {showBtn ? <AddItemBtn onClick={handleAddItemBtn} className='listButton' /> : null}
+            {showBtn ? <Button onClick={handleAddItemBtn} className='listButton' text='Add Item' /> : null}
             {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
         </div>
     );
