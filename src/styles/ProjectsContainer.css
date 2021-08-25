@@ -24,8 +24,13 @@
 }
 
 .addProjectBtn {
-    cursor: pointer;
     background-color: var(--darkerWhite);
     border: none;
+    cursor: pointer;
     font-size: 18px;
+    text-transform: uppercase;
+}
+
+.addProjectBtn:hover {
+    text-decoration: underline;
 }
