@@ -18,7 +18,8 @@
     align-items: initial;
     justify-content: center;
     gap: 5px;
-
+    
+    cursor: pointer;
     height: auto;
     width: 100%;
 }
