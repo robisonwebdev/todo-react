@@ -22,6 +22,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
+    gap: 10px;
+
     width: 90%;
+}
+
+.projectFormBtns button {
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    padding: 5px 0;
+    width: 100%;
 }
