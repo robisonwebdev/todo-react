@@ -30,6 +30,12 @@
 .projectFormBtns button {
     background-color: var(--white);
     border: 1px solid var(--black);
+    cursor: pointer;
     padding: 5px 0;
     width: 100%;
+}
+
+.projectFormBtns button:hover {
+    background-color: var(--red);
+    color: var(--white);
 }
