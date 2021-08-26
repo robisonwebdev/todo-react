@@ -53,7 +53,11 @@ const Main = () => {
             id: Math.floor(Math.random() * 10000)
         }
 
-        setProjects(prevState => [...prevState, newObject])
+        if (value === '') {
+            return null;
+        } else {
+            setProjects(prevState => [...prevState, newObject]);
+        }
     }
 
     const addItem = (id, value) => {
