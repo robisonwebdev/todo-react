@@ -23,7 +23,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
 
+    height: auto;
+    width: 100%;
+}
+
+.formControls button {
+    background-color: var(--darkerWhite);
+    border: 1px solid var(--black);
+    font-size: 14px;
+    padding: 5px;
     height: auto;
     width: 100%;
 }
