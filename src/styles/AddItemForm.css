@@ -5,5 +5,15 @@
     justify-content: center;
     gap: 15px;
 
-    width: 35%;
+    height: auto;
+    width: 40%;
+}
+
+.AddItemForm input {
+    border: 1px solid var(--darkerWhite);
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
 }
