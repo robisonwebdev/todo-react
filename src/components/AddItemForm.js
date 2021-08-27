@@ -4,7 +4,7 @@ import '../styles/AddItemForm.css';
 const AddItemForm = ({ cancel, handleChange, submit, value }) => {
     return (
         <form className='AddItemForm' onSubmit={submit}>
-            <input type='text' onChange={handleChange} value={value} />
+            <input type='text' onChange={handleChange} value={value} placeholder='Enter Item' />
             <div className='formControls'>
                 <button type='submit'>Add</button>
                 <button onClick={cancel}>Cancel</button>
