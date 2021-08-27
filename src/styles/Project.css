@@ -23,3 +23,8 @@
 .Project:hover .la-trash {
     color: var(--black);
 }
+
+.Project .la-trash:hover {
+    color: var(--red2);
+
+}
