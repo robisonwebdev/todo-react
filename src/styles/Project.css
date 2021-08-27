@@ -14,3 +14,11 @@
     align-items: center;
     gap: 5px;
 }
+
+.la-trash {
+    color: var(--darkerWhite);
+}
+
+.Project:hover .la-trash {
+    color: var(--black);
+}
