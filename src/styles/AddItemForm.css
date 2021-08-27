@@ -32,8 +32,13 @@
 .formControls button {
     background-color: var(--darkerWhite);
     border: 1px solid var(--black);
+    cursor: pointer;
     font-size: 14px;
     padding: 5px;
     height: auto;
     width: 100%;
+}
+.formControls button:hover {
+    background-color: var(--red);
+    color: var(--white);
 }
