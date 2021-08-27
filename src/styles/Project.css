@@ -17,6 +17,7 @@
 
 .la-trash {
     color: var(--darkerWhite);
+    font-size: 20px;
 }
 
 .Project:hover .la-trash {
