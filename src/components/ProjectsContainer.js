@@ -11,6 +11,17 @@ const ProjectsContainer = ({ projects, addProject, deleteProject, viewProject })
 
     const projectsMap = projects.map(project => <Project key={project.title} text={project.title} projectID={project.id} viewProject={viewProject} deleteProject={deleteProject} />)
 
+    const handleAddProjectBtn = () => {
+        setAddProjectBtn(false);
+        setShowForm(true);
+    }
+
+    const handleCancel = () => {
+        setInputValue('');
+        setShowForm(false);
+        setAddProjectBtn(true);
+    }
+
     const handleChange = (event) => {
         setInputValue(event.target.value);
     }
@@ -21,17 +32,6 @@ const ProjectsContainer = ({ projects, addProject, deleteProject, viewProject })
         setInputValue('');
         setShowForm(false);
         setAddProjectBtn(true);
-    }
-
-    const handleCancel = () => {
-        setInputValue('');
-        setShowForm(false);
-        setAddProjectBtn(true);
-    }
-
-    const handleAddProjectBtn = () => {
-        setAddProjectBtn(false);
-        setShowForm(true);
     }
 
     return (
