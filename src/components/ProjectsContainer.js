@@ -36,7 +36,6 @@ const ProjectsContainer = ({ projects, addProject, deleteProject, viewProject })
 
     return (
         <div id='ProjectsContainer'>
-            <i className="las la-inbox">All Projects</i>
             <div className='projects'>
                 <h2>Projects</h2>
                 {projectsMap}
