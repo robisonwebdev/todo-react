@@ -4,7 +4,7 @@ import Button from './Button';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
-const Lists = ({ id, items, title, addItem, updateChecked }) => {
+const Lists = ({ addItem, id, items, title, updateChecked }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
