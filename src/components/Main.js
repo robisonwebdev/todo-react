@@ -6,39 +6,20 @@ import '../styles/Main.css';
 const Main = () => {
     const [projects, setProjects] = useState([
         {
-          title: 'Fishing',
+          title: 'Shopping List',
           items: [
               {
-                  name: 'Bait',
+                  name: 'Milk',
                   checked: false
               },
               {
-                  name: 'Line',
+                  name: 'Bread',
                   checked: false
               }
           ],
           id: 147
-        },
-        {
-          title: 'Job',
-          items: [
-              {
-                  name: 'Hours',
-                  checked: false
-              },
-              {
-                  name: 'Pay',
-                  checked: false
-              },
-              {
-                  name: 'Years',
-                  checked: false
-              }
-          ],
-          id: 159
         }
     ]);
-
     const [currentProject, setCurrentProject] = useState(projects[0]);
     const [currentID, setCurrentID] = useState(projects[0].id)
 
