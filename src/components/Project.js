@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Project.css';
 
-const Project = ({ text, deleteProject, projectID, viewProject }) => {
+const Project = ({ deleteProject, projectID, text, viewProject }) => {
     return (
         <div className='Project'>
             <div className='projectItem' onClick={() => viewProject(projectID)}>
