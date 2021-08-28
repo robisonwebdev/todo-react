@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/AddProjectForm.css';
 
-const AddProjectForm = ({ onSubmit, onChange, onCancel, value}) => {
+const AddProjectForm = ({ onChange, onCancel, onSubmit, value}) => {
     return (
         <form className='projectForm' onSubmit={onSubmit}>
                 <input type='text' value={value} onChange={onChange} placeholder='Project Name' />
