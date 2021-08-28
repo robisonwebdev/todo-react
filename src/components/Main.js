@@ -27,6 +27,20 @@ const Main = () => {
         viewProject(currentID);
     }, [projects, currentID])
     
+    const addItem = (id, value) => {
+        let updateItems = projects.map(project => {
+            if (project.id === id) {
+                return {...project, items: [...project.items, {
+                    name: value,
+                    checked: false
+                }]};
+            }
+            return project;
+        })
+
+        setProjects(updateItems);
+    }
+    
     const addProject = (value) => {
         let newObject = {
             title: value,
@@ -41,49 +55,35 @@ const Main = () => {
         }
     }
 
-    const addItem = (id, value) => {
-        let updateItems = projects.map(project => {
-            if (project.id === id) {
-                return {...project, items: [...project.items, {
-                    name: value,
-                    checked: false
-                }]};
-            }
-            return project;
-        })
-
-        setProjects(updateItems);
-    }
-
     const deleteProject = (id) => {
         const newArray = projects.filter(project => project.id !== id);
 
         setProjects(newArray);
     }
 
+    const updateChecked = (id, name) => {
+        let updateItem = currentProject.items.map(item => {
+            if (item.name === name) {
+                return {...item, checked: !item.checked}
+            }
+            return item;
+        })
+ 
+        let updateProjects = projects.map(project => {
+            if (project.id === id) {
+                return {...project, items: updateItem}
+            }
+            return project;
+        })
+ 
+        setProjects(updateProjects);
+     }
+
     const viewProject = (id) => {
         let findProject = projects.filter(project => project.id === id);
 
         setCurrentProject(findProject[0]);
         setCurrentID(findProject[0].id);
-    }
-
-    const updateChecked = (id, name) => {
-       let updateItem = currentProject.items.map(item => {
-           if (item.name === name) {
-               return {...item, checked: !item.checked}
-           }
-           return item;
-       })
-
-       let updateProjects = projects.map(project => {
-           if (project.id === id) {
-               return {...project, items: updateItem}
-           }
-           return project;
-       })
-
-       setProjects(updateProjects);
     }
 
     return (
