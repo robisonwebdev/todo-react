@@ -36,12 +36,10 @@ const ProjectsContainer = ({ projects, addProject, deleteProject, viewProject })
 
     return (
         <div id='ProjectsContainer'>
-            <div className='projects'>
-                <h2>Projects</h2>
-                {projectsMap}
-                {addProjectBtn ? <Button className='addProjectBtn' onClick={handleAddProjectBtn} text='Add Project' /> : null}
-                {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} onCancel={handleCancel} value={inputValue} /> : null }
-            </div>
+            <h2>Projects</h2>
+            {projectsMap}
+            {addProjectBtn ? <Button className='addProjectBtn' onClick={handleAddProjectBtn} text='Add Project' /> : null}
+            {showForm ? <AddProjectForm onSubmit={handleSubmit} onChange={handleChange} onCancel={handleCancel} value={inputValue} /> : null }
         </div>
     );
 }
