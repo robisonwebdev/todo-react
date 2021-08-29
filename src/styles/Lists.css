@@ -2,12 +2,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    justify-content: flex-start;
+    gap: 100px;
 
     background-color: var(--white);
-    padding-top: 30px;
     height: 100%;
     width: 80%;
+}
+
+.displayUnchecked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    padding-top: 30px;
+    height: auto;
+    width: 100%;
 }
 
 .listItems {
@@ -88,6 +99,10 @@
     cursor: pointer;
     height: 35px;
     width: 25%;
+}
+
+.checkedButtons:hover {
+    text-decoration: underline;
 }
 
 .checkedItem {
