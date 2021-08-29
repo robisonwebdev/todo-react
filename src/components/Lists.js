@@ -13,8 +13,10 @@ const Lists = ({ addItem, id, items, title, updateChecked }) => {
         handleReset();
     }, [id])
 
-    let projectItems = items.map(item => {
-        return <Checkbox key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+    let displayUnchecked = items.map(item => {
+        if (!item.checked) {
+            return <Checkbox key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+        }        
     });
 
     const handleAddItemBtn = () => {
@@ -42,7 +44,7 @@ const Lists = ({ addItem, id, items, title, updateChecked }) => {
         <div id='Lists'>
             <h1>{title}</h1>
             <div className='listItems'>
-                {projectItems}
+                {displayUnchecked}
             </div>            
             {showBtn ? <Button onClick={handleAddItemBtn} className='listButton' text='Add Item' /> : null}
             {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
