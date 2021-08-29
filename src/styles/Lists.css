@@ -62,7 +62,9 @@
     justify-content: center;
     gap: 10px;
 
-    background-color: var(--liteBlack);
+    background-color: var(--darkerWhite);
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
     height: auto;
     width: 90%;
 }
@@ -74,16 +76,33 @@
     align-items: center;
     gap: 10px;
 
-    padding-top: 10px;
+    padding-top: 5px;
     height: auto;
     width: 100%;
 }
 
 .checkedButtons {
-    background-color: var(--red);
+    background-color: var(--liteBlack);
     border: 1px solid var(--darkerWhite);
     color: var(--white);
     cursor: pointer;
     height: 35px;
     width: 25%;
+}
+
+.checkedItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+
+    background-color: var(--liteBlack);
+    border-left: 3px solid var(--black);
+    color: var(--darkerWhite);
+    padding: 10px;
+    text-decoration: line-through;
+
+    height: auto;
+    width: 100%;
 }
