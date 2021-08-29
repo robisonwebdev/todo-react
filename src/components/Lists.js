@@ -49,12 +49,14 @@ const Lists = ({ addItem, id, items, title, updateChecked }) => {
     
     return (
         <div id='Lists'>
-            <h1>{title}</h1>
-            <div className='listItems'>
-                {displayUnchecked}
+            <div className='displayUnchecked'>
+                <h1>{title}</h1>
+                <div className='listItems'>
+                    {displayUnchecked}
+                </div>            
+                {showBtn ? <Button onClick={handleAddItemBtn} className='listButton' text='Add Item' /> : null}
+                {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
             </div>            
-            {showBtn ? <Button onClick={handleAddItemBtn} className='listButton' text='Add Item' /> : null}
-            {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
             <div className='displayChecked'>
                 <h1>Completed</h1>
                 <div className='displayCheckedBtns'>
