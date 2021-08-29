@@ -15,7 +15,19 @@ const Main = () => {
               {
                   name: 'Bread',
                   checked: false
-              }
+              },
+              {
+                name: 'Eggs',
+                checked: false
+            },
+            {
+                name: 'Butter',
+                checked: true
+            },
+            {
+                name: 'Potatos',
+                checked: false
+            }
           ],
           id: 147
         }
