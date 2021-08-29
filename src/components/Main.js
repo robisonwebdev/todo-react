@@ -98,10 +98,36 @@ const Main = () => {
         setCurrentID(findProject[0].id);
     }
 
+    const uncheckAll = (id) => {
+        let updateItem = currentProject.items.map(item => {
+            if (item.checked === true) {
+                return {...item, checked: false}
+            }
+            return item;
+        })
+
+        let updateProjects = projects.map(project => {
+            if (project.id === id) {
+                return {...project, items: updateItem}
+            }
+            return project;
+        })
+ 
+        setProjects(updateProjects);
+    }
+
     return (
         <div id='Main'>
             <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
-            <Lists project={currentProject} id={currentProject.id} items={currentProject.items} title={currentProject.title} addItem={addItem} updateChecked={updateChecked} />
+            <Lists
+                project={currentProject}
+                id={currentProject.id}
+                items={currentProject.items}
+                title={currentProject.title}
+                addItem={addItem}
+                uncheckAll={uncheckAll}
+                updateChecked={updateChecked}
+            />
         </div>
     );
 }
