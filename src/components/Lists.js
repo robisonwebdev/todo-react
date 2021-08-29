@@ -16,14 +16,14 @@ const Lists = ({ addItem, id, items, title, updateChecked }) => {
     let displayUnchecked = items.map(item => {
         if (!item.checked) {
             return <Checkbox key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
-        }        
+        } else return null;        
     });
 
 
     let displayChecked = items.map(item => {
         if (item.checked) {
             return <Checkbox key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
-        }
+        } else return null;
     })
 
     const handleAddItemBtn = () => {
