@@ -15,14 +15,14 @@ const Lists = ({ addItem, id, items, title, updateChecked }) => {
 
     let displayUnchecked = items.map(item => {
         if (!item.checked) {
-            return <Checkbox key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+            return <Checkbox className='item' key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
         } else return null;        
     });
 
 
     let displayChecked = items.map(item => {
         if (item.checked) {
-            return <Checkbox key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+            return <Checkbox className='checkedItem' key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
         } else return null;
     })
 
@@ -55,6 +55,14 @@ const Lists = ({ addItem, id, items, title, updateChecked }) => {
             </div>            
             {showBtn ? <Button onClick={handleAddItemBtn} className='listButton' text='Add Item' /> : null}
             {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
+            <div className='displayChecked'>
+                <h1>Completed</h1>
+                <div className='displayCheckedBtns'>
+                    <Button className='checkedButtons' text='Uncheck All' />
+                    <Button className='checkedButtons' text='Delete All' />
+                </div>
+                {displayChecked}
+            </div>
         </div>
     );
 }
