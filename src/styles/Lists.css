@@ -66,3 +66,15 @@
     height: auto;
     width: 90%;
 }
+
+.displayCheckedBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding-top: 10px;
+    height: auto;
+    width: 100%;
+}
