@@ -4,7 +4,7 @@ import Button from './Button';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
-const Lists = ({ addItem, id, items, title, updateChecked }) => {
+const Lists = ({ addItem, id, items, title, uncheckAll, updateChecked }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
@@ -60,7 +60,7 @@ const Lists = ({ addItem, id, items, title, updateChecked }) => {
             <div className='displayChecked'>
                 <h1>Completed</h1>
                 <div className='displayCheckedBtns'>
-                    <Button className='checkedButtons' text='Uncheck All' />
+                    <Button className='checkedButtons' onClick={() => uncheckAll(id)}  text='Uncheck All' />
                     <Button className='checkedButtons' text='Delete All' />
                 </div>
                 {displayChecked}
