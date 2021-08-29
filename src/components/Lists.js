@@ -19,6 +19,13 @@ const Lists = ({ addItem, id, items, title, updateChecked }) => {
         }        
     });
 
+
+    let displayChecked = items.map(item => {
+        if (item.checked) {
+            return <Checkbox key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+        }
+    })
+
     const handleAddItemBtn = () => {
         setShowBtn(false);
         setShowForm(true);
