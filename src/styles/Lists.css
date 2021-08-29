@@ -78,3 +78,12 @@
     height: auto;
     width: 100%;
 }
+
+.checkedButtons {
+    background-color: var(--red);
+    border: 1px solid var(--darkerWhite);
+    color: var(--white);
+    cursor: pointer;
+    height: 35px;
+    width: 25%;
+}
