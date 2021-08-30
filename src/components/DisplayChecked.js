@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
-const DisplayChecked = () => {
+const DisplayChecked = ({ displayChecked, uncheckAll }) => {
     return (
         <div className='displayChecked'>
             <h1>Completed</h1>
