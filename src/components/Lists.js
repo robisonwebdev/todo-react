@@ -5,7 +5,7 @@ import DisplayChecked from './DisplayChecked';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
-const Lists = ({ addItem, id, items, title, uncheckAll, updateChecked }) => {
+const Lists = ({ addItem, id, items, title, uncheckAll, deleteChecked, updateChecked }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
@@ -51,7 +51,7 @@ const Lists = ({ addItem, id, items, title, uncheckAll, updateChecked }) => {
                 {showBtn ? <Button onClick={handleAddItemBtn} className='listButton' text='Add Item' /> : null}
                 {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
             </div>            
-            <DisplayChecked id={id} items={items} uncheckAll={() => uncheckAll(id)} updateChecked={updateChecked} />
+            <DisplayChecked id={id} items={items} deleteChecked={() => deleteChecked(id)} uncheckAll={() => uncheckAll(id)} updateChecked={updateChecked} />
         </div>
     );
 }
