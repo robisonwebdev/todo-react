@@ -9,10 +9,15 @@ const Lists = ({ addItem, id, items, title, uncheckAll, deleteChecked, updateChe
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
+    const [showChecked, setShowChecked] = useState(false);
 
     useEffect(() => {
         handleReset();
     }, [id])
+
+    useEffect(() => {
+        handleShowChecked();
+    }, [items])
 
     let displayUnchecked = items.map(item => {
         if (!item.checked) {
@@ -40,6 +45,12 @@ const Lists = ({ addItem, id, items, title, uncheckAll, deleteChecked, updateChe
         addItem(id, inputValue);
         handleReset();
     }
+
+    const handleShowChecked = () => {
+        const results = items.filter(item => item.checked === true);
+
+        results.length > 0 ? setShowChecked(true) : setShowChecked(false);
+    }
     
     return (
         <div id='Lists'>
@@ -50,8 +61,8 @@ const Lists = ({ addItem, id, items, title, uncheckAll, deleteChecked, updateChe
                 </div>            
                 {showBtn ? <Button onClick={handleAddItemBtn} className='listButton' text='Add Item' /> : null}
                 {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
-            </div>            
-            <DisplayChecked id={id} items={items} deleteChecked={() => deleteChecked(id)} uncheckAll={() => uncheckAll(id)} updateChecked={updateChecked} />
+            </div>
+            {showChecked ? <DisplayChecked id={id} items={items} deleteChecked={() => deleteChecked(id)} uncheckAll={() => uncheckAll(id)} updateChecked={updateChecked} /> : null }
         </div>
     );
 }
