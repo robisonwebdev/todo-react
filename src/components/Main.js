@@ -67,6 +67,21 @@ const Main = () => {
         }
     }
 
+    const deleteChecked = (id) => {
+        let newArray = currentProject.items.filter(item => {
+            return item.checked !== true;
+        })
+
+        let updateProjects = projects.map(project => {
+            if (project.id === id) {
+                return {...project, items: newArray};
+            }
+            return project;
+        })
+
+        setProjects(updateProjects);
+    }
+
     const deleteProject = (id) => {
         const newArray = projects.filter(project => project.id !== id);
 
@@ -125,6 +140,7 @@ const Main = () => {
                 items={currentProject.items}
                 title={currentProject.title}
                 addItem={addItem}
+                deleteChecked={deleteChecked}
                 uncheckAll={uncheckAll}
                 updateChecked={updateChecked}
             />
