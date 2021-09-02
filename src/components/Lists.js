@@ -40,16 +40,16 @@ const Lists = ({ addItem, id, items, title, uncheckAll, deleteChecked, updateChe
         setInputVale('');
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        addItem(id, inputValue);
-        handleReset();
-    }
-
     const handleShowChecked = () => {
         const results = items.filter(item => item.checked === true);
 
         results.length > 0 ? setShowChecked(true) : setShowChecked(false);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        addItem(id, inputValue);
+        handleReset();
     }
     
     return (
