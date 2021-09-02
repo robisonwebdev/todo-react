@@ -88,6 +88,24 @@ const Main = () => {
         setProjects(newArray);
     }
 
+    const uncheckAll = (id) => {
+        let updateItem = currentProject.items.map(item => {
+            if (item.checked === true) {
+                return {...item, checked: false}
+            }
+            return item;
+        })
+
+        let updateProjects = projects.map(project => {
+            if (project.id === id) {
+                return {...project, items: updateItem}
+            }
+            return project;
+        })
+ 
+        setProjects(updateProjects);
+    }
+
     const updateChecked = (id, name) => {
         let updateItem = currentProject.items.map(item => {
             if (item.name === name) {
@@ -111,24 +129,6 @@ const Main = () => {
 
         setCurrentProject(findProject[0]);
         setCurrentID(findProject[0].id);
-    }
-
-    const uncheckAll = (id) => {
-        let updateItem = currentProject.items.map(item => {
-            if (item.checked === true) {
-                return {...item, checked: false}
-            }
-            return item;
-        })
-
-        let updateProjects = projects.map(project => {
-            if (project.id === id) {
-                return {...project, items: updateItem}
-            }
-            return project;
-        })
- 
-        setProjects(updateProjects);
     }
 
     return (
