@@ -62,6 +62,10 @@
     color: black;
 }
 
+.item .itemRight .la-trash:hover {
+    color: var(--red);
+}
+
 .listButton {
     cursor: pointer;
     background-color: var(--white);
