@@ -58,6 +58,10 @@
     gap: 10px;
 }
 
+.item:hover .itemRight .la-trash {
+    color: black;
+}
+
 .listButton {
     cursor: pointer;
     background-color: var(--white);
