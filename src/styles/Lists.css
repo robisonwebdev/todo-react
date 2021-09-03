@@ -64,6 +64,7 @@
 
 .item .itemRight .la-trash:hover {
     color: var(--red);
+    cursor: pointer;
 }
 
 .listButton {
