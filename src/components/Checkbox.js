@@ -7,7 +7,9 @@ const Checkbox = ({ className, checked, id, name, updateChecked  }) => {
                 <input type='checkbox' checked={checked} onChange={() => updateChecked(id, name)} />
                 {name}
             </div>
-            <div className='itemRight'></div>
+            <div className='itemRight'>
+                <i className="las la-trash"></i>
+            </div>
         </label>
     );
 }
