@@ -21,7 +21,15 @@ const Lists = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAl
 
     let displayUnchecked = items.map(item => {
         if (!item.checked) {
-            return <Checkbox className='item' onClick={deleteItem} key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+            return <Checkbox
+                checked={item.checked}
+                className='item'
+                id={id}
+                key={item.name + id}
+                name={item.name}
+                onChange={updateChecked}
+                onClick={deleteItem}
+            />
         } else return null;        
     });    
 
