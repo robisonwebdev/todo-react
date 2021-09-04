@@ -24,6 +24,7 @@ const Lists = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAl
             return <Checkbox
                 checked={item.checked}
                 className='item'
+                iconName='las la-trash'
                 id={id}
                 key={item.name + id}
                 name={item.name}
