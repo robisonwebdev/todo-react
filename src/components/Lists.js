@@ -5,7 +5,7 @@ import DisplayChecked from './DisplayChecked';
 import AddItemForm from './AddItemForm';
 import '../styles/Lists.css';
 
-const Lists = ({ addItem, deleteChecked, id, items, title, uncheckAll, updateChecked }) => {
+const Lists = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAll, updateChecked }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
@@ -21,7 +21,7 @@ const Lists = ({ addItem, deleteChecked, id, items, title, uncheckAll, updateChe
 
     let displayUnchecked = items.map(item => {
         if (!item.checked) {
-            return <Checkbox className='item' key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+            return <Checkbox className='item' deleteItem={deleteItem} key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
         } else return null;        
     });    
 
