@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Checkbox = ({ className, checked, id, name, updateChecked  }) => {
+const Checkbox = ({ className, checked, onClick, id, name, updateChecked  }) => {
     return (
         <label className={className}>
             <div className='itemLeft'>
@@ -8,7 +8,7 @@ const Checkbox = ({ className, checked, id, name, updateChecked  }) => {
                 {name}
             </div>
             <div className='itemRight'>
-                <i className="las la-trash"></i>
+                <i className="las la-trash" onClick={() => onClick(id, name)}></i>
             </div>
         </label>
     );
