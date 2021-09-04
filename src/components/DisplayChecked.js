@@ -5,7 +5,14 @@ import Button from './Button';
 const DisplayChecked = ({ id, items, uncheckAll, deleteChecked, updateChecked }) => {
     let displayChecked = items.map(item => {
         if (item.checked) {
-            return <Checkbox className='checkedItem' key={item.name + id} name={item.name} checked={item.checked} updateChecked={updateChecked} id={id} />
+            return <Checkbox
+                checked={item.checked}
+                className='checkedItem'
+                id={id}
+                key={item.name + id}
+                name={item.name}
+                onChange={updateChecked}
+            />
         } else return null;
     });
 
