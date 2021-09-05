@@ -72,14 +72,7 @@ const Main = () => {
             return item.checked !== true;
         })
 
-        let updateProjects = projects.map(project => {
-            if (project.id === id) {
-                return {...project, items: newArray};
-            }
-            return project;
-        })
-
-        setProjects(updateProjects);
+        updateProjects(id, newArray);
     }
 
     const deleteItem = (id, name) => {
