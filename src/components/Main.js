@@ -110,21 +110,14 @@ const Main = () => {
     }
 
     const updateChecked = (id, name) => {
-        let updateItem = currentProject.items.map(item => {
+        let newArray = currentProject.items.map(item => {
             if (item.name === name) {
                 return {...item, checked: !item.checked}
             }
             return item;
         })
  
-        let updateProjects = projects.map(project => {
-            if (project.id === id) {
-                return {...project, items: updateItem}
-            }
-            return project;
-        })
- 
-        setProjects(updateProjects);
+        updateProjects(id, newArray);
      }
 
     const viewProject = (id) => {
