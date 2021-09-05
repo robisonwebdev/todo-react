@@ -99,21 +99,14 @@ const Main = () => {
     }
 
     const uncheckAll = (id) => {
-        let updateItem = currentProject.items.map(item => {
+        let newArray = currentProject.items.map(item => {
             if (item.checked === true) {
                 return {...item, checked: false}
             }
             return item;
         })
 
-        let updateProjects = projects.map(project => {
-            if (project.id === id) {
-                return {...project, items: updateItem}
-            }
-            return project;
-        })
- 
-        setProjects(updateProjects);
+        updateProjects(id, newArray);
     }
 
     const updateChecked = (id, name) => {
