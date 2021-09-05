@@ -95,6 +95,17 @@ const Main = () => {
         setProjects(updateProject);
     }
 
+    const updateProjects = (id, newArray) => {
+        let updateProjects = projects.map(project => {
+            if (project.id === id) {
+                return {...project, items: newArray};
+            }
+            return project;
+        })
+
+        setProjects(updateProjects);
+    }
+
     const deleteProject = (id) => {
         const newArray = projects.filter(project => project.id !== id);
 
