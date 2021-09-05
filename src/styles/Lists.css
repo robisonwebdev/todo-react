@@ -60,6 +60,10 @@
     cursor: pointer;
 }
 
+.itemLeft input {
+    cursor: pointer;
+}
+
 .item:hover .itemRight .la-trash {
     color: black;
 }
