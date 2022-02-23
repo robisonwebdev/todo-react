@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProjectsContainer from './ProjectsContainer';
 import Lists from './Lists';
-import '../styles/Main.css';
+import '../styles/Main/Main.css';
 
 const Main = () => {
     const [projects, setProjects] = useState([
