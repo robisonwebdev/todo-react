@@ -1,4 +1,4 @@
-#Header {
+header {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -14,6 +14,6 @@
     width: 100%;
 }
 
-#Header i {
+header i {
     font-size: 35px;
 }
