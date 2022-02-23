@@ -5,7 +5,7 @@ import DisplayChecked from '../DisplayChecked';
 import AddItemForm from '../AddItemForm';
 import '../../styles/Main/ListsContainer.css';
 
-const Lists = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAll, updateChecked }) => {
+const ListsContainer = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAll, updateChecked }) => {
     const [inputValue, setInputVale] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const [showForm, setShowForm] = useState(false);
@@ -76,4 +76,4 @@ const Lists = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAl
     );
 }
 
-export default Lists;
+export default ListsContainer;
