@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ProjectsContainer from './ProjectsContainer';
-import Lists from './Lists';
+import ProjectsContainer from '../ProjectsContainer';
+import Lists from '../Lists';
 import '../styles/Main/Main.css';
 
 const Main = () => {
