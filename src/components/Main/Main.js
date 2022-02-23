@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProjectsContainer from '../ProjectsContainer';
-import Lists from '../Lists';
+import ListsContainer from './ListsContainer';
 import '../../styles/Main/Main.css';
 
 const Main = () => {
@@ -130,7 +130,7 @@ const Main = () => {
     return (
         <main>
             <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
-            <Lists
+            <ListsContainer
                 project={currentProject}
                 id={currentProject.id}
                 items={currentProject.items}
