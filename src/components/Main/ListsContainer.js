@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Checkbox from './Checkbox';
-import Button from './Button';
-import DisplayChecked from './DisplayChecked';
-import AddItemForm from './AddItemForm';
-import '../styles/Lists.css';
+import Checkbox from '../Checkbox';
+import Button from '../Button';
+import DisplayChecked from '../DisplayChecked';
+import AddItemForm from '../AddItemForm';
+import '../../styles/Main/ListsContainer.css';
 
 const Lists = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAll, updateChecked }) => {
     const [inputValue, setInputVale] = useState('');
