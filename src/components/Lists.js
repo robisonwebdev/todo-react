@@ -62,7 +62,7 @@ const Lists = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAl
     }
     
     return (
-        <div id='Lists'>
+        <section className='lists_container'>
             <div className='displayUnchecked'>
                 <h1>{title}</h1>
                 <div className='listItems'>
@@ -72,7 +72,7 @@ const Lists = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAl
                 {showForm ? <AddItemForm submit={handleSubmit} cancel={handleReset} handleChange={handleChange} value={inputValue} /> : null}
             </div>
             {showChecked ? <DisplayChecked id={id} items={items} deleteChecked={() => deleteChecked(id)} uncheckAll={() => uncheckAll(id)} updateChecked={updateChecked} /> : null }
-        </div>
+        </section>
     );
 }
 
