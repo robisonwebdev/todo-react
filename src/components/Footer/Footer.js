@@ -3,9 +3,9 @@ import '../../styles/Footer/Footer.css';
 
 const Footer = ({ address, name, text }) => {
     return (
-        <div id='Footer'>
+        <footer>
             <p>{text} <a href={address} target='_blank' rel='noreferrer'>{name}</a></p>
-        </div>
+        </footer>
     );
 }
 
