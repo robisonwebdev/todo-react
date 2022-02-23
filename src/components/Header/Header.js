@@ -3,10 +3,10 @@ import '../../styles/Header/Header.css';
 
 const Header = () => {
     return (
-        <div id='Header'>
+        <header>
             <i className="las la-check-circle"></i>
             <h1>Todo List</h1>
-        </div>
+        </header>
     );
 }
 
