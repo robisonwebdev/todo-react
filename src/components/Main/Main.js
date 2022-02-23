@@ -128,7 +128,7 @@ const Main = () => {
     }
 
     return (
-        <div id='Main'>
+        <main>
             <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
             <Lists
                 project={currentProject}
@@ -141,7 +141,7 @@ const Main = () => {
                 uncheckAll={uncheckAll}
                 updateChecked={updateChecked}
             />
-        </div>
+        </main>
     );
 }
 
