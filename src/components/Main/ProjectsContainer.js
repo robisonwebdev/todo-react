@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Project from './Project';
-import Button from './Button';
-import AddProjectForm from './AddProjectForm';
-import '../styles/ProjectsContainer.css';
+import Project from '../Project';
+import Button from '../Button';
+import AddProjectForm from '../AddProjectForm';
+import '../../styles/Main/ProjectsContainer.css';
 
 const ProjectsContainer = ({ addProject, deleteProject, projects, viewProject }) => {
     const [inputValue, setInputValue] = useState('');
