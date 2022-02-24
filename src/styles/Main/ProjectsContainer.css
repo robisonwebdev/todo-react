@@ -12,7 +12,7 @@
     width: 20%;
 }
 
-.addProjectBtn {
+.add_project_btn {
     background-color: var(--red);
     border: 1px solid var(--darkerWhite);
     color: var(--white);
@@ -22,7 +22,7 @@
     padding: 10px;
 }
 
-.addProjectBtn:hover {
+.add_project_btn:hover {
     border-color: var(--black);
     text-decoration: underline;
 }
