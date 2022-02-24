@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import '../styles/AddProjectForm.css';
 
-const AddProjectForm = ({ onCancel, onSubmit }) => {
+const AddProjectForm = ({ onCancel, newProject }) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        newProject(inputValue);
+        setInputValue('');
+    }
+
     return (
-        <form className='projectForm' onSubmit={() => onSubmit(inputValue)}>
+        <form className='projectForm' onSubmit={handleSubmit}>
                 <input type='text' value={inputValue} onChange={handleInputChange} placeholder='Project Name' />
                 <div className='projectFormBtns'>
                     <button type='submit'>Add Project</button>
