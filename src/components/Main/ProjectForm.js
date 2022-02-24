@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/Main/ProjectForm.css';
 
-const AddProjectForm = ({ onCancel, newProject }) => {
+const ProjectForm = ({ onCancel, newProject }) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (event) => {
@@ -25,4 +25,4 @@ const AddProjectForm = ({ onCancel, newProject }) => {
     );
 }
 
-export default AddProjectForm;
+export default ProjectForm;
