@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProjectsContainer from '../ProjectsContainer';
+import ProjectsContainer from './ProjectsContainer';
 import ListsContainer from './ListsContainer';
 import '../../styles/Main/Main.css';
 
