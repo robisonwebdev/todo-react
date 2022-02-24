@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Project.css';
+import '../../styles/Main/Project.css';
 
 const Project = ({ deleteProject, projectID, text, viewProject }) => {
     return (
