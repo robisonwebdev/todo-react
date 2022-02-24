@@ -1,6 +1,6 @@
 import React from 'react';
 import Checkbox from './Checkbox';
-import Button from './Button';
+import Button from './Main/Button';
 
 const DisplayChecked = ({ id, items, uncheckAll, deleteChecked, updateChecked }) => {
     let displayChecked = items.map(item => {
