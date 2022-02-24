@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/AddProjectForm.css';
+import '../../styles/Main/ProjectForm.css';
 
 const AddProjectForm = ({ onCancel, newProject }) => {
     const [inputValue, setInputValue] = useState('');
@@ -12,7 +12,7 @@ const AddProjectForm = ({ onCancel, newProject }) => {
         event.preventDefault();
         newProject(inputValue);
         setInputValue('');
-    }
+    };
 
     return (
         <form className='projectForm' onSubmit={handleSubmit}>
