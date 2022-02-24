@@ -15,9 +15,9 @@ const ProjectForm = ({ onCancel, newProject }) => {
     };
 
     return (
-        <form className='projectForm' onSubmit={handleSubmit}>
+        <form className='project_form' onSubmit={handleSubmit}>
                 <input type='text' value={inputValue} onChange={handleInputChange} placeholder='Project Name' />
-                <div className='projectFormBtns'>
+                <div className='project_form_btns'>
                     <button type='submit'>Add Project</button>
                     <button type='button' onClick={onCancel}>Cancel</button>
                 </div>
