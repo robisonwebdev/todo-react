@@ -61,7 +61,7 @@ const ProjectsContainer = () => {
         <section className='projects_container'>
             <h2>Projects</h2>
             {projects.length === 0 ? <p>No Projects</p> : displayProjects()}
-            {showAddProjectBtn ? <Button className='addProjectBtn' onClick={handleShowingForm} text='Add Project' /> : null}
+            {showAddProjectBtn ? <Button className='add_project_btn' onClick={handleShowingForm} text='Add Project' /> : null}
             {showProjectForm ? <ProjectForm onCancel={handleFormReset} newProject={getNewProject} /> : null}
         </section>
     );
