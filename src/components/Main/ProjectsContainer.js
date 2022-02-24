@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Project from '../Project';
-import Button from '../Button';
-import AddProjectForm from '../AddProjectForm';
+import Button from './Button';
+import Project from './Project';
+import ProjectForm from './ProjectForm';
 import '../../styles/Main/ProjectsContainer.css';
 
 const ProjectsContainer = () => {
@@ -40,7 +40,7 @@ const ProjectsContainer = () => {
         });
 
         return mapProjects;
-    }
+    };
 
     const handleFormReset = () => {
         setShowAddProjectBtn(true);
@@ -62,7 +62,7 @@ const ProjectsContainer = () => {
             <h2>Projects</h2>
             {projects.length === 0 ? <p>No Projects</p> : displayProjects()}
             {showAddProjectBtn ? <Button className='addProjectBtn' onClick={handleShowingForm} text='Add Project' /> : null}
-            {showProjectForm ? <AddProjectForm onCancel={handleFormReset} newProject={getNewProject} /> : null}
+            {showProjectForm ? <ProjectForm onCancel={handleFormReset} newProject={getNewProject} /> : null}
         </section>
     );
 }
