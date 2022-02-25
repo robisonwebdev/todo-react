@@ -4,8 +4,7 @@ import Project from './Project';
 import ProjectForm from './ProjectForm';
 import '../../styles/Main/ProjectsContainer.css';
 
-const ProjectsContainer = () => {
-    const [projects, setProjects] = useState([]);
+const ProjectsContainer = ({ projects, setProjects }) => {
     const [showAddProjectBtn, setShowAddProjectBtn] = useState(true);
     const [showProjectForm, setShowProjectForm] = useState(false);
 
