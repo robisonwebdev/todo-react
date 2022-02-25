@@ -18,6 +18,11 @@
     cursor: pointer;
 }
 
+.project_trash {
+    display: flex;
+    align-items: center;
+}
+
 .project_trash svg {
     color: var(--darkerWhite);
     font-size: 20px;
