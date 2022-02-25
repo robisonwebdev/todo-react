@@ -1,14 +1,16 @@
 import React from 'react';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import '../../styles/Main/Project.css';
 
 const Project = ({ deleteProject, projectID, text, viewProject }) => {
     return (
         <div className='project'>
             <div className='project_name' onClick={() => viewProject(projectID)}>
-                <i className="las la-tasks"></i>
+                <PlaylistAddCheckIcon />
                 <p>{text}</p>
-            </div>            
-            <i className="las la-trash" onClick={() => deleteProject(projectID)}></i>
+            </div>
+            <DeleteForeverIcon onClick={() => deleteProject(projectID)} />
         </div>
     );
 }
