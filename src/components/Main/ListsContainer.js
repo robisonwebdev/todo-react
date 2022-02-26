@@ -5,7 +5,9 @@ import DisplayChecked from '../DisplayChecked';
 import AddItemForm from '../AddItemForm';
 import '../../styles/Main/ListsContainer.css';
 
-const ListsContainer = ({ addItem, deleteChecked, deleteItem, id, items, title, uncheckAll, updateChecked }) => {
+const ListsContainer = ({ project, updateProjects }) => {
+    const projectTitle = project[0]?.title;
+
     // const [inputValue, setInputVale] = useState('');
     // const [showBtn, setShowBtn] = useState(true);
     // const [showForm, setShowForm] = useState(false);
@@ -63,6 +65,10 @@ const ListsContainer = ({ addItem, deleteChecked, deleteItem, id, items, title, 
     
     return (
         <section className='lists_container'>
+            {console.log('List Project', project)}
+            <section className='unchecked_list'>
+                <h1>{projectTitle}</h1>
+            </section>
             {/* <div className='displayUnchecked'>
                 <h1>{title}</h1>
                 <div className='listItems'>
