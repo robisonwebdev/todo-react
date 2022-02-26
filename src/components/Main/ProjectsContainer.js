@@ -4,7 +4,7 @@ import Project from './Project';
 import ProjectForm from './ProjectForm';
 import '../../styles/Main/ProjectsContainer.css';
 
-const ProjectsContainer = ({ projects, setProjects }) => {
+const ProjectsContainer = ({ projects, setProjects, setSelectedProject }) => {
     const [showAddProjectBtn, setShowAddProjectBtn] = useState(true);
     const [showProjectForm, setShowProjectForm] = useState(false);
 
@@ -33,6 +33,7 @@ const ProjectsContainer = ({ projects, setProjects }) => {
                     deleteProject={deleteProject}
                     key={project.id}
                     projectID={project.id}
+                    viewProject={setSelectedProject}
                     text={project.title}
                 />
             );
