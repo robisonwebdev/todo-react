@@ -2,7 +2,7 @@ import React from 'react';
 
 const CheckedList = () => {
     return (
-        <section>CheckedList</section>
+        <ul>CheckedList</ul>
     );
 };
 
