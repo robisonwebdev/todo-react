@@ -4,9 +4,38 @@ import Button from './Button';
 import DisplayChecked from '../DisplayChecked';
 import AddItemForm from '../AddItemForm';
 import '../../styles/Main/ListsContainer.css';
+import CheckedList from './CheckedList';
 
 const ListsContainer = ({ project, updateProjects }) => {
-    const projectTitle = project[0]?.title;
+
+    const emptyListMessage = () => {
+        return (
+            <p>Your list is empty. Click Add Item below to add more items.</p>
+        );
+    }
+
+    // const getUncheckedItems = () => {
+    //     if (projectItems.length === 0) return null;
+
+    //     const mapUnchecked = projectItems.map(item => {
+    //         if (item.checked) return null;
+
+    //         return (
+    //             <Checkbox
+    //                 checked={item.checked}
+    //                 className='item'
+    //                 iconName='las la-trash'
+    //                 // id={id}
+    //                 // key={item.name + id}
+    //                 name={item.name}
+    //                 // onChange={updateChecked}
+    //                 // onClick={deleteItem}
+    //             />
+    //         );
+    //     });
+
+    //     return mapUnchecked;
+    // };
 
     // const [inputValue, setInputVale] = useState('');
     // const [showBtn, setShowBtn] = useState(true);
@@ -65,9 +94,9 @@ const ListsContainer = ({ project, updateProjects }) => {
     
     return (
         <section className='lists_container'>
-            {console.log('List Project', project)}
+            {/* {console.log('List Project', project[0])} */}
             <section className='unchecked_list'>
-                <h1>{projectTitle}</h1>
+                {project === null ? emptyListMessage() : <CheckedList project={project} />}
             </section>
             {/* <div className='displayUnchecked'>
                 <h1>{title}</h1>
