@@ -8,9 +8,9 @@ import CheckedList from './CheckedList';
 
 const ListsContainer = ({ project, updateProjects }) => {
 
-    const emptyListMessage = () => {
+    const noProjectMessage = () => {
         return (
-            <p>Your list is empty. Click Add Item below to add more items.</p>
+            <p>No Project selected. Click on a project to view todo list.</p>
         );
     }
 
@@ -96,7 +96,7 @@ const ListsContainer = ({ project, updateProjects }) => {
         <section className='lists_container'>
             {/* {console.log('List Project', project[0])} */}
             <section className='unchecked_list'>
-                {project === null ? emptyListMessage() : <CheckedList project={project} />}
+                {project === null ? noProjectMessage() : <CheckedList project={project} />}
             </section>
             {/* <div className='displayUnchecked'>
                 <h1>{title}</h1>
