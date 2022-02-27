@@ -3,8 +3,8 @@ import Checkbox from '../Checkbox';
 import Button from './Button';
 import DisplayChecked from '../DisplayChecked';
 import AddItemForm from '../AddItemForm';
+import UncheckedList from './UncheckedList';
 import '../../styles/Main/ListsContainer.css';
-import CheckedList from './CheckedList';
 
 const ListsContainer = ({ project, updateProjects }) => {
 
@@ -95,8 +95,8 @@ const ListsContainer = ({ project, updateProjects }) => {
     return (
         <section className='lists_container'>
             {/* {console.log('List Project', project[0])} */}
-            <section className='unchecked_list'>
-                {project === null ? noProjectMessage() : <CheckedList project={project} />}
+            <section className='unchecked_container'>
+                {project === null ? noProjectMessage() : <UncheckedList project={project} />}
             </section>
             {/* <div className='displayUnchecked'>
                 <h1>{title}</h1>
