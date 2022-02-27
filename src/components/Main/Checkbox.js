@@ -1,5 +1,6 @@
 import React from 'react';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import '../../styles/Main/Checkbox.css';
 
 const Checkbox = ({ className, checked, iconName, id, onChange, onClick, name }) => {
     return (
