@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const Checkbox = ({ className, checked, iconName, id, onChange, onClick, name }) => {
     return (
@@ -8,7 +9,7 @@ const Checkbox = ({ className, checked, iconName, id, onChange, onClick, name })
                 {name}
             </div>
             <div className='itemRight'>
-                <i className={iconName} onClick={() => onClick(id, name)}></i>
+                <DeleteForeverIcon sx={{ fontSize: 20 }} />
             </div>
         </label>
     );
