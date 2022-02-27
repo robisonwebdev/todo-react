@@ -10,18 +10,15 @@ const UncheckedList = ({ project }) => {
             if (item.checked) return null;
     
             return (
-                <li>
-                    <Checkbox
-                        checked={item.checked}
-                        className='item'
-                        iconName='las la-trash'
-                        // id={id}
-                        // key={item.name + id}
-                        name={item.name}
-                        // onChange={updateChecked}
-                        // onClick={deleteItem}
-                    />
-                </li>
+                <Checkbox
+                    checked={item.checked}
+                    className='unchecked_item'
+                    // id={id}
+                    // key={item.name + id}
+                    name={item.name}
+                    // onChange={updateChecked}
+                    // onClick={deleteItem}
+                />
             );
         });
 
