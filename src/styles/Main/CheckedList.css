@@ -1,0 +1,10 @@
+.unchecked_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    list-style-type: none;
+    height: auto;
+    width: 80%;
+}
