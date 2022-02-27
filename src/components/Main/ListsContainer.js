@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Checkbox from '../Checkbox';
 import Button from './Button';
 import DisplayChecked from '../DisplayChecked';
 import AddItemForm from '../AddItemForm';
