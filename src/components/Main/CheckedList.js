@@ -1,5 +1,6 @@
 import React from 'react';
 import Checkbox from '../Checkbox';
+import '../../styles/Main/CheckedList.css';
 
 const CheckedList = ({ project }) => {
     const { items, title } = project[0];
@@ -24,7 +25,11 @@ const CheckedList = ({ project }) => {
             );
         });
 
-        return mapItems;
+        return (
+            <ul className='unchecked_list'>
+                {mapItems}
+            </ul>
+        );
     };
 
     return (
