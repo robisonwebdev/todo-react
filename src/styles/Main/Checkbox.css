@@ -1,0 +1,45 @@
+.unchecked_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--darkerWhite);
+    border-left: 3px solid var(--red);
+    padding: 10px;
+
+    height: auto;
+    width: 100%;
+}
+
+.unchecked_item:hover {
+    box-shadow: -1px 3px 3px -1px var(--red);
+}
+
+.item_left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+.item_left input {
+    cursor: pointer;
+}
+
+/* Styling for delete button */
+.unchecked_item .item_right svg {
+    color: var(--darkerWhite);
+}
+
+.unchecked_item:hover .item_right svg {
+    color: black;
+}
+
+.unchecked_item .item_right svg:hover {
+    color: var(--red);
+    cursor: pointer;
+}
