@@ -1,8 +1,8 @@
 import React from 'react';
 import Checkbox from '../Checkbox';
-import '../../styles/Main/CheckedList.css';
+import '../../styles/Main/UncheckedList.css';
 
-const CheckedList = ({ project }) => {
+const UncheckedList = ({ project }) => {
     const { items, title } = project[0];
 
     const getItems = () => {
@@ -40,4 +40,4 @@ const CheckedList = ({ project }) => {
     );
 };
 
-export default CheckedList;
+export default UncheckedList;
