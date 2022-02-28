@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../styles/AddItemForm.css';
+import '../../styles/Main/ListForm.css';
 
 const ListForm = ({ cancel, handleChange, submit, value }) => {
     return (
