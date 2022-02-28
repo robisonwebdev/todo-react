@@ -1,11 +1,11 @@
 import React from 'react';
-import '../styles/AddItemForm.css';
+// import '../styles/AddItemForm.css';
 
-const AddItemForm = ({ cancel, handleChange, submit, value }) => {
+const ListForm = ({ cancel, handleChange, submit, value }) => {
     return (
-        <form className='AddItemForm' onSubmit={submit}>
+        <form className='list_form' onSubmit={submit}>
             <input type='text' onChange={handleChange} value={value} placeholder='Enter Item' />
-            <div className='formControls'>
+            <div className='form_controls'>
                 <button type='submit'>Add</button>
                 <button onClick={cancel}>Cancel</button>
             </div>
@@ -13,4 +13,4 @@ const AddItemForm = ({ cancel, handleChange, submit, value }) => {
     );
 }
 
-export default AddItemForm;
+export default ListForm;
