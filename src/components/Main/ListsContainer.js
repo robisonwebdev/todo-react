@@ -6,6 +6,7 @@ import UncheckedList from './UncheckedList';
 import '../../styles/Main/ListsContainer.css';
 
 const ListsContainer = ({ project, updateProjects }) => {
+    const [showButton, setShowButton] = useState(true);
 
     const noProjectMessage = () => {
         return (
@@ -96,6 +97,7 @@ const ListsContainer = ({ project, updateProjects }) => {
             {/* {console.log('List Project', project[0])} */}
             <section className='unchecked_container'>
                 {project === null ? noProjectMessage() : <UncheckedList project={project} />}
+                {showButton ? <Button className='add_item_button' text='Add Item' /> : null}
             </section>
             {/* <div className='displayUnchecked'>
                 <h1>{title}</h1>
