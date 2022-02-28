@@ -14,7 +14,7 @@ const UncheckedList = ({ project }) => {
                     checked={item.checked}
                     className='unchecked_item'
                     // id={id}
-                    // key={item.name + id}
+                    key={item.name + item.id}
                     name={item.name}
                     // onChange={updateChecked}
                     // onClick={deleteItem}
