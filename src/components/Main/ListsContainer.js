@@ -9,6 +9,11 @@ const ListsContainer = ({ project, updateProjects }) => {
     const [showButton, setShowButton] = useState(true);
     const [showForm, setShowForm] = useState(false);
 
+    const handleButtonClick = () => {
+        setShowButton(false);
+        setShowForm(true);
+    }
+
     const noProjectMessage = () => {
         return (
             <p>No Project selected. Click on a project to view todo list.</p>
@@ -98,7 +103,7 @@ const ListsContainer = ({ project, updateProjects }) => {
             {/* {console.log('List Project', project[0])} */}
             <section className='unchecked_container'>
                 {project === null ? noProjectMessage() : <UncheckedList project={project} />}
-                {showButton ? <Button className='add_item_button' text='Add Item' /> : null}
+                {showButton ? <Button className='add_item_button' onClick={handleButtonClick} text='Add Item' /> : null}
                 {showForm ? <ListForm /> : null}
             </section>
             {/* <div className='displayUnchecked'>
