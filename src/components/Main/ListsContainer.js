@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Button from './Button';
 import DisplayChecked from '../DisplayChecked';
-import AddItemForm from '../AddItemForm';
+import ListForm from './ListForm';
 import UncheckedList from './UncheckedList';
 import '../../styles/Main/ListsContainer.css';
 
 const ListsContainer = ({ project, updateProjects }) => {
     const [showButton, setShowButton] = useState(true);
+    const [showForm, setShowForm] = useState(false);
 
     const noProjectMessage = () => {
         return (
@@ -98,6 +99,7 @@ const ListsContainer = ({ project, updateProjects }) => {
             <section className='unchecked_container'>
                 {project === null ? noProjectMessage() : <UncheckedList project={project} />}
                 {showButton ? <Button className='add_item_button' text='Add Item' /> : null}
+                {showForm ? <ListForm /> : null}
             </section>
             {/* <div className='displayUnchecked'>
                 <h1>{title}</h1>
