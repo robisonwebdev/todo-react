@@ -1,0 +1,14 @@
+.add_item_button {
+    cursor: pointer;
+    background-color: var(--white);
+    border: 1px solid var(--darkerWhite);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    width: 90%;
+}
+
+.add_item_button:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
