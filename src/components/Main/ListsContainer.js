@@ -5,20 +5,42 @@ import ListForm from './ListForm';
 import UncheckedList from './UncheckedList';
 import '../../styles/Main/ListsContainer.css';
 
-const ListsContainer = ({ project, updateProjects }) => {
+const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
     const [showButton, setShowButton] = useState(true);
     const [showForm, setShowForm] = useState(false);
+
+    const addListItem = (item) => {
+        const newItem = allProjects.map(obj => {
+            if (obj.id === project[0].id) {
+                return {...obj, items: [...obj.items, {
+                    name: item,
+                    checked: false
+                }]};
+            };
+
+            return obj;
+        });
+
+        updateAllProjects(newItem);
+    };
 
     const handleButtonClick = () => {
         setShowButton(false);
         setShowForm(true);
+    };
+
+    const handleFormReset = () => {
+        setShowButton(true);
+        setShowForm(false);
     }
 
     const noProjectMessage = () => {
         return (
             <p>No Project selected. Click on a project to view todo list.</p>
         );
-    }
+    };
+
+    
 
     // const getUncheckedItems = () => {
     //     if (projectItems.length === 0) return null;
@@ -71,11 +93,6 @@ const ListsContainer = ({ project, updateProjects }) => {
     //     } else return null;        
     // });    
 
-    // const handleAddItemBtn = () => {
-    //     setShowBtn(false);
-    //     setShowForm(true);
-    // }
-
     // const handleChange = (event) => {
     //     setInputVale(event.target.value);
     // }
@@ -100,11 +117,11 @@ const ListsContainer = ({ project, updateProjects }) => {
     
     return (
         <section className='lists_container'>
-            {/* {console.log('List Project', project[0])} */}
+            {console.log('Project', project)}
             <section className='unchecked_container'>
                 {project === null ? noProjectMessage() : <UncheckedList project={project} />}
                 {showButton ? <Button className='add_item_button' onClick={handleButtonClick} text='Add Item' /> : null}
-                {showForm ? <ListForm /> : null}
+                {showForm ? <ListForm addListItem={addListItem} onCancel={handleFormReset} /> : null}
             </section>
             {/* <div className='displayUnchecked'>
                 <h1>{title}</h1>
