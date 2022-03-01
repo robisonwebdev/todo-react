@@ -40,6 +40,11 @@ const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
         );
     };
 
+    // Resets showButton and showForm when changing projects.
+    useEffect(() => {
+        handleFormReset();
+    }, [project])
+
     
 
     // const getUncheckedItems = () => {
