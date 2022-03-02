@@ -15,10 +15,8 @@ const UncheckedList = ({ deleteListItem, handleCheckbox, project }) => {
                     className='unchecked_item'
                     deleteListItem={deleteListItem}
                     handleCheckbox={handleCheckbox}
-                    // id={id}
                     key={item.name + item.id}
                     name={item.name}
-                    // onChange={updateChecked}
                 />
             );
         });
