@@ -2,7 +2,7 @@ import React from 'react';
 import Checkbox from './Checkbox';
 import '../../styles/Main/UncheckedList.css';
 
-const UncheckedList = ({ project }) => {
+const UncheckedList = ({ deleteListItem, handleCheckbox, project }) => {
     const { items, title } = project[0];
 
     const getItems = () => {
@@ -13,11 +13,12 @@ const UncheckedList = ({ project }) => {
                 <Checkbox
                     checked={item.checked}
                     className='unchecked_item'
+                    deleteListItem={deleteListItem}
+                    handleCheckbox={handleCheckbox}
                     // id={id}
                     key={item.name + item.id}
                     name={item.name}
                     // onChange={updateChecked}
-                    // onClick={deleteItem}
                 />
             );
         });
