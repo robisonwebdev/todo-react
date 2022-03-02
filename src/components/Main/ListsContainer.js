@@ -87,6 +87,7 @@ const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
                 {showButton ? <Button className='add_item_button' onClick={handleButtonClick} text='Add Item' /> : null}
                 {showForm ? <ListForm addListItem={addListItem} onCancel={handleFormReset} /> : null}
             </section>
+            <section className='checked_container'></section>
         </section>
     );
 }
