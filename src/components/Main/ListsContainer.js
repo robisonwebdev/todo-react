@@ -24,6 +24,20 @@ const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
         updateAllProjects(newItem);
     };
 
+    const deleteListItem = (deletedItem) => {
+        const updatedList = project[0].items.filter(item => item.name !== deletedItem);
+
+        const updateProjects = allProjects.map(obj => {
+            if (obj.id === project[0].id) {
+                return {...obj, items: updatedList};
+            };
+
+            return obj;
+        });
+
+        updateAllProjects(updateProjects);
+    };
+
     const handleButtonClick = () => {
         setShowButton(false);
         setShowForm(true);
@@ -124,7 +138,7 @@ const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
         <section className='lists_container'>
             {console.log('Project', project)}
             <section className='unchecked_container'>
-                {project === null ? noProjectMessage() : <UncheckedList project={project} />}
+                {project === null ? noProjectMessage() : <UncheckedList deleteListItem={deleteListItem} project={project} />}
                 {showButton ? <Button className='add_item_button' onClick={handleButtonClick} text='Add Item' /> : null}
                 {showForm ? <ListForm addListItem={addListItem} onCancel={handleFormReset} /> : null}
             </section>
