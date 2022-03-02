@@ -43,6 +43,26 @@ const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
         setShowForm(true);
     };
 
+    const handleCheckbox = (checkedItem) => {
+        const updatedList = project[0].items.map(item => {
+            if (item.name === checkedItem) {
+                return {...item, checked: !item.checked};
+            };
+
+            return item;
+        });
+
+        const updateProjects = allProjects.map(obj => {
+            if (obj.id === project[0].id) {
+                return {...obj, items: updatedList};
+            };
+
+            return obj;
+        });
+
+        updateAllProjects(updateProjects);
+    }
+
     const handleFormReset = () => {
         setShowButton(true);
         setShowForm(false);
@@ -138,7 +158,7 @@ const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
         <section className='lists_container'>
             {console.log('Project', project)}
             <section className='unchecked_container'>
-                {project === null ? noProjectMessage() : <UncheckedList deleteListItem={deleteListItem} project={project} />}
+                {project === null ? noProjectMessage() : <UncheckedList deleteListItem={deleteListItem} handleCheckbox={handleCheckbox} project={project} />}
                 {showButton ? <Button className='add_item_button' onClick={handleButtonClick} text='Add Item' /> : null}
                 {showForm ? <ListForm addListItem={addListItem} onCancel={handleFormReset} /> : null}
             </section>
