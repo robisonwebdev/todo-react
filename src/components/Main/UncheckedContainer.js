@@ -7,6 +7,7 @@ import '../../styles/Main/UncheckedContainer.css';
 const UncheckedContainer = ({ allProjects, project, updateAllProjects }) => {
     const [showButton, setShowButton] = useState(true);
     const [showForm, setShowForm] = useState(false);
+    const { title } = project[0];
 
     const addListItem = (item) => {
         const newItem = allProjects.map(obj => {
@@ -74,6 +75,7 @@ const UncheckedContainer = ({ allProjects, project, updateAllProjects }) => {
 
     return (
         <section className='unchecked_container'>
+            <h1>{title}</h1>
             <UncheckedList deleteListItem={deleteListItem} handleCheckbox={handleCheckbox} project={project} />
             {showButton ? <Button className='add_item_button' onClick={handleButtonClick} text='Add Item' /> : null}
             {showForm ? <ListForm addListItem={addListItem} onCancel={handleFormReset} /> : null}
