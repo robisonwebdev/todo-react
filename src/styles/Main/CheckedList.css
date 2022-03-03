@@ -1,0 +1,40 @@
+.checked_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    list-style-type: none;
+    height: auto;
+    width: 100%;
+}
+
+.checked_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--liteBlack);
+    color: var(--white);
+    border-left: 3px solid var(--black);
+    padding: 10px;
+    text-decoration: line-through;
+
+    height: auto;
+    width: 100%;
+}
+
+/* Styling for delete button */
+.checked_item .item_right svg {
+    color: var(--liteBlack);
+}
+
+.checked_item:hover .item_right svg {
+    color: var(--darkerWhite);
+}
+
+.checked_item .item_right svg:hover {
+    color: var(--blue);
+    cursor: pointer;
+}
