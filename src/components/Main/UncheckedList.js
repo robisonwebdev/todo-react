@@ -3,9 +3,9 @@ import Checkbox from './Checkbox';
 import '../../styles/Main/UncheckedList.css';
 
 const UncheckedList = ({ deleteListItem, handleCheckbox, project }) => {
-    const { items, title } = project[0];
+    const { items } = project[0];
 
-    const getItems = () => {
+    const getUncheckedItems = () => {
         const mapItems = items.map(item => {
             if (item.checked) return null;
     
@@ -26,7 +26,7 @@ const UncheckedList = ({ deleteListItem, handleCheckbox, project }) => {
 
     return (
         <ul className='unchecked_list'>
-            {items.length === 0 ? <p>No items in list.</p> : getItems()}
+            {items.length === 0 ? <p>No items in list.</p> : getUncheckedItems()}
         </ul>
     );
 };
