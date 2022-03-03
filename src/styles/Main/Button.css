@@ -12,3 +12,16 @@
     background-color: var(--red);
     color: var(--white);
 }
+
+.checked_button {
+    background-color: var(--liteBlack);
+    border: 1px solid var(--darkerWhite);
+    color: var(--white);
+    cursor: pointer;
+    height: 35px;
+    width: 25%;
+}
+
+.checked_button:hover {
+    text-decoration: underline;
+}
