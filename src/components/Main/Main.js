@@ -4,38 +4,41 @@ import ListsContainer from './ListsContainer';
 import '../../styles/Main/Main.css';
 
 const Main = () => {
-    const [projects, setProjects] = useState([]);
+    const [projects, setProjects] = useState([{
+        title: 'Shopping List',
+        items: [
+            {
+                name: 'Milk',
+                checked: false
+            },
+            {
+                name: 'Bread',
+                checked: false
+            },
+            {
+            name: 'Eggs',
+            checked: false
+            },
+            {
+            name: 'Butter',
+            checked: true
+            },
+            {
+            name: 'Potatos',
+            checked: false
+            }
+        ],
+        id: 147
+    }]);
+    const [selectedProject, setSelectedProject] = useState(null);
 
-    // const [projects, setProjects] = useState([
-    //     {
-    //       title: 'Shopping List',
-    //       items: [
-    //           {
-    //               name: 'Milk',
-    //               checked: false
-    //           },
-    //           {
-    //               name: 'Bread',
-    //               checked: false
-    //           },
-    //           {
-    //             name: 'Eggs',
-    //             checked: false
-    //         },
-    //         {
-    //             name: 'Butter',
-    //             checked: true
-    //         },
-    //         {
-    //             name: 'Potatos',
-    //             checked: false
-    //         }
-    //       ],
-    //       id: 147
-    //     }
-    // ]);
-    // const [currentProject, setCurrentProject] = useState(projects[0]);
-    // const [currentID, setCurrentID] = useState(projects[0].id)
+    const displayProject = () => {
+        if (selectedProject === null) return null;
+
+        const findProject = projects.filter(project => project.id === selectedProject);
+
+        return findProject;
+    };
 
     // useEffect(() => {
     //     viewProject(currentID);
@@ -54,20 +57,6 @@ const Main = () => {
 
     //     setProjects(updateItems);
     // }
-    
-    // const addProject = (value) => {
-    //     let newObject = {
-    //         title: value,
-    //         items: [],
-    //         id: Math.floor(Math.random() * 10000)
-    //     }
-
-    //     if (value === '') {
-    //         return null;
-    //     } else {
-    //         setProjects(prevState => [...prevState, newObject]);
-    //     }
-    // }
 
     // const deleteChecked = (id) => {
     //     let newArray = currentProject.items.filter(item => {
@@ -81,12 +70,6 @@ const Main = () => {
     //     let newArray = currentProject.items.filter(item => item.name !== name);
 
     //     updateProjects(id, newArray);
-    // }
-
-    // const deleteProject = (id) => {
-    //     const newArray = projects.filter(project => project.id !== id);
-
-    //     setProjects(newArray);
     // }
 
     // const uncheckAll = (id) => {
@@ -122,29 +105,10 @@ const Main = () => {
     //     setProjects(updateProjects);
     // }
 
-    // const viewProject = (id) => {
-    //     let findProject = projects.filter(project => project.id === id);
-
-    //     setCurrentProject(findProject[0]);
-    //     setCurrentID(findProject[0].id);
-    // }
-
     return (
         <main>
-            <ProjectsContainer projects={projects} setProjects={setProjects} />
-            <ListsContainer />
-            {/* <ProjectsContainer projects={projects} addProject={addProject} deleteProject={deleteProject} viewProject={viewProject} />
-            <ListsContainer
-                project={currentProject}
-                id={currentProject.id}
-                items={currentProject.items}
-                title={currentProject.title}
-                addItem={addItem}
-                deleteChecked={deleteChecked}
-                deleteItem={deleteItem}
-                uncheckAll={uncheckAll}
-                updateChecked={updateChecked}
-            /> */}
+            <ProjectsContainer projects={projects} setProjects={setProjects} setSelectedProject={setSelectedProject} />
+            <ListsContainer allProjects={projects} project={displayProject()} updateAllProjects={setProjects} />
         </main>
     );
 }
