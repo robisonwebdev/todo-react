@@ -8,8 +8,8 @@ const CheckedContainer = ({ allProjects, project, updatedAllProjects }) => {
         <section className='checked_container'>
             <h1>Completed List</h1>
             <div className='checked_list_buttons'>
-                <Button text='Uncheck All' />
-                <Button text='Delete All' />
+                <Button className='checked_button' text='Uncheck All' />
+                <Button className='checked_button' text='Delete All' />
             </div>
             <CheckedList project={project} />
         </section>
