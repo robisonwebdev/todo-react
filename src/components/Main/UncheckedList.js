@@ -21,18 +21,13 @@ const UncheckedList = ({ deleteListItem, handleCheckbox, project }) => {
             );
         });
 
-        return (
-            <ul className='unchecked_list'>
-                {mapItems}
-            </ul>
-        );
+        return mapItems;
     };
 
     return (
-        <>
-            <h1>{title}</h1>
+        <ul className='unchecked_list'>
             {items.length === 0 ? <p>No items in list.</p> : getItems()}
-        </>
+        </ul>
     );
 };
 
