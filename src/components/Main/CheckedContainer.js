@@ -3,7 +3,21 @@ import Button from './Button';
 import CheckedList from './CheckedList';
 import '../../styles/Main/CheckedContainer.css';
 
-const CheckedContainer = ({ allProjects, project, updatedAllProjects }) => {
+const CheckedContainer = ({ allProjects, project, updateAllProjects }) => {
+    const deleteListItem = (deletedItem) => {
+        const updatedList = project[0].items.filter(item => item.name !== deletedItem);
+
+        const updateProjects = allProjects.map(obj => {
+            if (obj.id === project[0].id) {
+                return {...obj, items: updatedList};
+            };
+
+            return obj;
+        });
+
+        updateAllProjects(updateProjects);
+    };
+
     return (
         <section className='checked_container'>
             <h1>Completed List</h1>
@@ -11,7 +25,7 @@ const CheckedContainer = ({ allProjects, project, updatedAllProjects }) => {
                 <Button className='checked_button' text='Uncheck All' />
                 <Button className='checked_button' text='Delete All' />
             </div>
-            <CheckedList project={project} />
+            <CheckedList deleteListItem={deleteListItem} project={project} />
         </section>
     );
 };
