@@ -2,7 +2,7 @@ import React from 'react';
 import Checkbox from './Checkbox';
 import '../../styles/Main/CheckedList.css';
 
-const CheckedList = ({ deleteListItem, project }) => {
+const CheckedList = ({ deleteListItem, handleCheckbox, project }) => {
     const { items } = project[0];
 
     const getCheckedItems = () => {
@@ -14,7 +14,7 @@ const CheckedList = ({ deleteListItem, project }) => {
                     checked={item.checked}
                     className='checked_item'
                     deleteListItem={deleteListItem}
-                    // handleCheckbox={handleCheckbox}
+                    handleCheckbox={handleCheckbox}
                     key={item.name + item.id}
                     name={item.name}
                 />
