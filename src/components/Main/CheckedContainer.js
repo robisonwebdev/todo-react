@@ -38,6 +38,20 @@ const CheckedContainer = ({ allProjects, project, updateAllProjects }) => {
         updateAllProjects(updateProjects);
     };
 
+    const handleDeleteAll = () => {
+        const updatedList = project[0].items.filter(item => item.checked !== true);
+
+        const updateProjects = allProjects.map(obj => {
+            if (obj.id === project[0].id) {
+                return {...obj, items: updatedList};
+            };
+
+            return obj;
+        });
+
+        updateAllProjects(updateProjects);
+    };
+
     const handleUncheckAll = () => {
         const updatedList = project[0].items.map(item => {
             if (item.checked) {
@@ -63,7 +77,7 @@ const CheckedContainer = ({ allProjects, project, updateAllProjects }) => {
             <h1>Completed List</h1>
             <div className='checked_list_buttons'>
                 <Button className='checked_button' onClick={handleUncheckAll} text='Uncheck All' />
-                <Button className='checked_button' text='Delete All' />
+                <Button className='checked_button' onClick={handleDeleteAll} text='Delete All' />
             </div>
             <CheckedList deleteListItem={deleteListItem} handleCheckbox={handleCheckbox} project={project} />
         </section>
