@@ -5,6 +5,10 @@ import '../../styles/Main/UncheckedList.css';
 const UncheckedList = ({ deleteListItem, handleCheckbox, project }) => {
     const { items } = project[0];
 
+    const emptyListMessage = () => {
+        return <p className='empty_list_message'>No items in list. Click Add Item below to start adding items to list.</p>
+    };
+
     const getUncheckedItems = () => {
         const mapItems = items.map(item => {
             if (item.checked) return null;
@@ -26,7 +30,7 @@ const UncheckedList = ({ deleteListItem, handleCheckbox, project }) => {
 
     return (
         <ul className='unchecked_list'>
-            {items.length === 0 ? <p>No items in list.</p> : getUncheckedItems()}
+            {items.length === 0 ? emptyListMessage() : getUncheckedItems()}
         </ul>
     );
 };
