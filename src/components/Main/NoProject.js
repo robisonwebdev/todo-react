@@ -2,7 +2,9 @@ import React from 'react';
 
 const NoProject = () => {
     return (
-        <section>NoProject</section>
+        <section className='noProject'>
+            <strong>No Project selected. Select or Add Project to start a list.</strong>
+        </section>
     );
 };
 
