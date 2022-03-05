@@ -27,6 +27,11 @@
     box-shadow: -1px 3px 3px -1px var(--red);
 }
 
+.empty_list_message {
+    text-align: center;
+    width: 100%;
+}
+
 /* Styling for delete button */
 .unchecked_item .item_right svg {
     color: var(--darkerWhite);
