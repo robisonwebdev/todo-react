@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import CheckedContainer from './CheckedContainer';
+import NoProject from './NoProject';
 import UncheckedContainer from './UncheckedContainer';
 import '../../styles/Main/ListsContainer.css';
 
 
 const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
     const [showCheckedContainer, setShowCheckedContainer] = useState(false);
-
-    const noProjectMessage = () => {
-        return (
-            <p>No Project selected. Click on a project to view todo list.</p>
-        );
-    };
 
     // Checks project items for checked = true, sets state based on result
     useEffect(() => {
@@ -24,7 +19,7 @@ const ListsContainer = ({ allProjects, project, updateAllProjects }) => {
 
     return (
         <section className='lists_container'>
-            {project === null ? noProjectMessage() : null}
+            {project === null ? <NoProject /> : null}
             {project === null ? null : <UncheckedContainer allProjects={allProjects} project={project} updateAllProjects={updateAllProjects} />}
             {project === null 
                 ? null
