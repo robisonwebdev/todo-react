@@ -4,7 +4,7 @@ import Project from './Project';
 import ProjectForm from './ProjectForm';
 import '../../styles/Main/ProjectsContainer.css';
 
-const ProjectsContainer = ({ projects, setProjects, setSelectedProject }) => {
+const ProjectsContainer = ({ projects, selectedProject, setProjects, setSelectedProject }) => {
     const [showAddProjectBtn, setShowAddProjectBtn] = useState(true);
     const [showProjectForm, setShowProjectForm] = useState(false);
 
@@ -22,6 +22,11 @@ const ProjectsContainer = ({ projects, setProjects, setSelectedProject }) => {
 
     const deleteProject = (id) => {
         const newArray = projects.filter(project => project.id !== id);
+
+        if (id === selectedProject) {
+            setSelectedProject(null);
+            setProjects(newArray);
+        };
 
         setProjects(newArray);
     };
