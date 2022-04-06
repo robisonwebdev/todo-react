@@ -8,8 +8,8 @@ header {
     background-color: var(--red);
     border-bottom: 2px solid var(--black);
     color: var(--white);
-    padding-left: 15px;
+    padding: 10px 0 10px 8px;
 
-    height: 7%;
+    height: auto;
     width: 100%;
 }
