@@ -6,6 +6,7 @@
     gap: 100px;
 
     background-color: var(--white);
+    padding-bottom: 10px;
     height: 100%;
     width: 80%;
 }
